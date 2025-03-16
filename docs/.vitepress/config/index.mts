@@ -1,13 +1,40 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type SiteConfig } from 'vitepress'
+// 自动导入 TDesign 
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { TDesignResolver } from 'unplugin-vue-components/resolvers';
 
-import shared from './shared'
-import en from './en'
-import zh from './zh'
+import { createRssFileZH, createRssFileEN } from "./rss";
+import { handleHeadMeta } from "./handleHeadMeta";
+
+import blogConfig from '../../../blogConfig.json'
+import { provide } from 'vue';
+
+const themeName = process.env.THEME || blogConfig.theme || 'default'
+const config = (blogConfig as any)[themeName]?.config || {}
 
 export default defineConfig({
-  ...shared,
-  locales: {
-    root: { label: '简体中文', ...zh },
-    en: { label: 'English', ...en },
-  }
+  ...config,
+  async transformHead(context) {
+    return handleHeadMeta(context)
+  },
+  buildEnd: (config: SiteConfig) => {
+    createRssFileZH(config);
+    createRssFileEN(config);
+  },
+  vite: {
+    plugins: [
+      // ...
+      AutoImport({
+        resolvers: [TDesignResolver({
+          library: 'vue-next'
+        })],
+      }),
+      Components({
+        resolvers: [TDesignResolver({
+          library: 'vue-next'
+        })],
+      }),
+    ],
+  },
 })
