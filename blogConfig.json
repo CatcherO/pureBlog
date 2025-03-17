@@ -45,23 +45,23 @@
           "themeConfig": {
             "nav": [
               {
-                "text": "博客",
+                "text": "最近",
                 "link": "/"
               },
               {
-                "text": "归档",
-                "link": "/archive",
-                "activeMatch": "/archive"
+                "text": "全部",
+                "link": "/pages/archive",
+                "activeMatch": "/pages/archive"
               },
               {
                 "text": "关于",
-                "link": "/about",
-                "activeMatch": "/about"
+                "link": "/pages/about",
+                "activeMatch": "/pages/about"
               },
               {
-                "text": "赞助",
-                "link": "/support-me",
-                "activeMatch": "/support-me"
+                "text": "标签",
+                "link": "pages/tags",
+                "activeMatch": "pages/tags"
               }
             ],
             "footer": {

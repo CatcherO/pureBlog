@@ -1,12 +1,12 @@
 import { createContentLoader } from 'vitepress'
 
-interface Post {
+export interface Post {
   title: string
   url: string
   date: {
     time: number
     string: string
-    year: string 
+    year: string
     monthDay: string
   }
   tags: string[]

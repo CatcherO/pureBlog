@@ -19,13 +19,7 @@ isNoBackBtn: true
     >
     <div class="post-date hollow-text source-han-serif">{{ post.date.string }}</div>
   </h2>
-  <t-tag
-    v-for="tag in post.tags"
-    class="mr-2"
-    variant="outline"
-    shape="round"
-    >{{ tag }}</t-tag
-  >
+  <IndexTags :tags="post.tags" />
   <div v-if="post.excerpt" v-html="post.excerpt"></div>
 </template>
 

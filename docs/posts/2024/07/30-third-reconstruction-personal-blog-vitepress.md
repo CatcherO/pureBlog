@@ -112,7 +112,7 @@ export default defineConfig({
 
 获取数据我们可以通过[Vitepress 提供的`createcontentloader`](https://vitepress.dev/zh/guide/data-loading#createcontentloader)来快捷获取某个目录下的所有文章。
 
-> 该辅助函数接受一个相对于[源目录](https://vitepress.dev/zh/guide/routing#source-directory)的 glob 模式，并返回一个 `{ watch, load }` 数据加载对象，该对象可以用作数据加载文件中的默认导出。
+> 该辅助函数接受一个相对于[源目录](https://vitepress.dev/zh/guide/routing#source-directory)的 glob 模式，并返回一个 `{ watch, load }` 数据加载对象，该对象可以用作数据加载文件中的默认导出。
 > 
 > 加载的数据将作为 JSON 内联在客户端 bundle 中。
 
@@ -194,13 +194,7 @@ function formatDate(raw: string): Post['date'] {
     >
     <div class="post-date hollow-text">{{ post.date.string }}</div>
   </h2>
-  <t-tag
-    v-for="tag in post.tags"
-    class="mr-2"
-    variant="outline"
-    shape="round"
-    >{{ tag }}</t-tag
-  >
+  <IndexTags :tags="post.tags" />
   <div v-if="post.excerpt" v-html="post.excerpt"></div>
 </template>
 
@@ -561,7 +555,7 @@ socialLinks: [
 
 这里其实[官方指南](https://vitepress.dev/zh/guide/extending-default-theme#using-different-fonts)也有较为详细的教程。
 
-> 为了避免在生成后的输出中包含 Inter 字体，我们从 `vitepress/theme-without-fonts` 中导入主题。
+> 为了避免在生成后的输出中包含 Inter 字体，我们从 `vitepress/theme-without-fonts` 中导入主题。
 
 `theme/index.ts`
 
@@ -587,7 +581,7 @@ import Theme from 'vitepress/theme-without-fonts'
 
 现在，你就可以像平常一样愉快地使用改字体了...
 
-最后，我们为了提高用户体验，即加载速度，我们使用预加载字体文件的手段进行优化，这里使用[transformHead](https://vitepress.dev/zh/reference/site-config#transformhead) 构建钩子来添加对应的 head 信息：
+最后，我们为了提高用户体验，即加载速度，我们使用预加载字体文件的手段进行优化，这里使用[transformHead](https://vitepress.dev/zh/reference/site-config#transformhead) 构建钩子来添加对应的 head 信息：
 
 处理 head 的函数，使用正则匹配是因为 assets 目录下的文件名会有哈希后缀。
 
@@ -623,7 +617,7 @@ export function handleFontsPreload({ assets }: TransformContext) {
 }
 ```
 
-在[transformHead](https://vitepress.dev/zh/reference/site-config#transformhead) 构建钩子执行这个函数：
+在[transformHead](https://vitepress.dev/zh/reference/site-config#transformhead) 构建钩子执行这个函数：
 
 ```ts
 async transformHead(context) {

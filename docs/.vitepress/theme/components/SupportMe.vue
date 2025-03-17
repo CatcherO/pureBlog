@@ -1,4 +1,13 @@
 <template>
+		<div class="tags">
+        <span @click="toggleTag(String(key))" v-for="(_, key) in tags" class="tag">
+            {{ key }} <sup>{{ tags[key].length }}</sup>
+        </span>
+    </div>
+
+
+
+
 	<t-card :style="{ maxWidth: '520px', margin: 'auto', marginTop: '20px', paddingBottom: '10px' }">
 		<h3 align="center" style="border: 0; margin: 10px 0 0;">Support Me</h3>
 		<div class="card-container">
@@ -42,8 +51,22 @@
 	<div class="my-name hollow-text source-han-serif">I'm Justin3go</div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vitepress";
+
+let url = location.href.split('?')[1]
+let params = new URLSearchParams(url)
+
+const tags = computed(() => initTags(posts))
+let selectTag = ref(params.get('tag') ? params.get('tag') : '')
+const toggleTag = (tag: string) => {
+    selectTag.value = tag
+}
+// choose the first key
+const defaultDisplayTag = Object.keys(tags.value)[0]
+if (defaultDisplayTag) {
+    toggleTag(defaultDisplayTag)
+}
 
 const route = useRoute();
 const isEN = computed(() => route.path.startsWith("/en"));
