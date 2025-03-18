@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineEmits } from 'vue';
+import { computed } from 'vue';
 import { useRouter, useData } from 'vitepress';
 
 // 定义事件
