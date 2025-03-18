@@ -126,15 +126,24 @@
 }
 
 .VPDoc a:hover {
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
 
 .VPFooter a {
 	text-decoration: none !important;
 }
 
-.VPFooter a:hover {
-	text-decoration: underline !important;
+/* 标签链接样式 */
+.tag {
+	text-decoration: none !important;
+}
+
+.tag:hover {
+	text-decoration: none !important;
+}
+
+.tag:active {
+	text-decoration: none !important;
 }
 
 .VPDoc img {

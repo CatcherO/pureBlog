@@ -8,8 +8,8 @@ isNoBackBtn: true
 aside: false
 ---
 
-<HomeEn />
+<ArchiveEn />
 
 <script lang="ts" setup>
-import HomeEn from '../.vitepress/theme/components/HomeEn.vue';
-</script> 
+import ArchiveEn from '../../.vitepress/theme/components/ArchiveEn.vue';
+</script>

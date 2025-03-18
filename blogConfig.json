@@ -111,18 +111,18 @@
               },
               {
                 "text": "Archive",
-                "link": "/en/archive/",
-                "activeMatch": "/en/archive/"
+                "link": "/en/pages/archive/",
+                "activeMatch": "/en/pages/archive/"
               },
               {
                 "text": "About",
-                "link": "/en/about",
-                "activeMatch": "/en/about"
+                "link": "/en/pages/about",
+                "activeMatch": "/en/pages/about"
               },
               {
-                "text": "Sponsor",
-                "link": "/en/support-me",
-                "activeMatch": "/en/support-me"
+                "text": "Tags",
+                "link": "/en/pages/tags",
+                "activeMatch": "/en/pages/tags"
               }
             ],
             "footer": {

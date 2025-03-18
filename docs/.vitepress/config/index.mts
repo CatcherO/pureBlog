@@ -8,9 +8,8 @@ import { createRssFileZH, createRssFileEN } from "./rss";
 import { handleHeadMeta } from "./handleHeadMeta";
 
 import blogConfig from '../../../blogConfig.json'
-import { provide } from 'vue';
 
-const themeName = process.env.THEME || blogConfig.theme || 'default'
+const themeName = blogConfig.theme || 'default'
 const config = (blogConfig as any)[themeName]?.config || {}
 
 export default defineConfig({

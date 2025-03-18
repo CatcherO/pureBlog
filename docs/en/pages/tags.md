@@ -5,11 +5,10 @@ editLink: false
 lastUpdated: false
 isNoComment: true
 isNoBackBtn: true
-aside: false
 ---
 
-<HomeEn />
+<script setup>
+import TagsView from '../../.vitepress/theme/components/TagsView.vue'
+</script>
 
-<script lang="ts" setup>
-import HomeEn from '../.vitepress/theme/components/HomeEn.vue';
-</script> 
+<TagsView />

@@ -10,6 +10,10 @@ import ImageViewer from "./components/ImageViewer.vue"
 import GoBack from "./components/GoBack.vue";
 import TagItem from "./components/TagItem.vue";
 import IndexTags from "./components/IndexTags.vue";
+import Home from "./components/Home.vue";
+import HomeEn from "./components/HomeEn.vue";
+import Archive from "./components/Archive.vue";
+import ArchiveEn from "./components/ArchiveEn.vue";
 
 export default {
 	...Theme,
@@ -28,6 +32,10 @@ export default {
 		app.component("GoBack", GoBack);
 		app.component("TagItem", TagItem);
 		app.component("IndexTags", IndexTags);
+		app.component("Home", Home);
+		app.component("HomeEn", HomeEn);
+		app.component("Archive", Archive);
+		app.component("ArchiveEn", ArchiveEn);
 		
 		// 添加导航事件处理
 		if (router) {

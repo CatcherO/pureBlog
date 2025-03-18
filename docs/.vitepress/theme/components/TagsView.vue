@@ -6,7 +6,7 @@
     <div v-else-if="Object.keys(data).length === 0" class="no-posts">暂无标签</div>
     <div v-else class="tags-container">
         <div class="tags-wrapper">
-            <div class="tags">
+            <div class="tags" :class="{ 'expanded': isExpanded }">
                 <TagItem
                     v-for="(items, key) in data"
                     :key="key"
@@ -16,10 +16,9 @@
                     @click="toggleTag(key)"
                 />
             </div>
-            <div class="tags-fade-left"></div>
-            <div class="tags-fade-right"></div>
-            <div class="tags-fade-top"></div>
-            <div class="tags-fade-bottom"></div>
+            <div class="expand-button" @click="toggleExpand">
+                <span class="expand-icon" :class="{ 'expanded': isExpanded }">^</span>
+            </div>
         </div>
         <div class="content-divider"></div>
         <transition name="fade" mode="out-in">
@@ -47,8 +46,30 @@
                     <div class="posts-fade-bottom"></div>
                 </div>
             </div>
-            <div v-else key="empty" class="no-tag-selected">
-                请选择一个标签查看相关文章
+            <div v-else key="all" class="content-wrapper">
+                <div class="posts-by-tag">
+                    <div v-for="(articles, tag) in data" :key="tag" class="tag-group">
+                        <div class="tag-title">{{ tag }}</div>
+                        <div class="tag-posts">
+                            <a
+                                :href="withBase(article.url)"
+                                v-for="(article, index) in articles"
+                                :key="index"
+                                class="posts"
+                                :style="{ '--index': index }"
+                            >
+                                <div class="post-container">
+                                    <div class="post-dot"></div>
+                                    {{ article.title }}
+                                </div>
+                                <div class="date">{{ article.date.string }}</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div v-if="Object.keys(data).length === 0" class="no-posts">
+                        暂无文章
+                    </div>
+                </div>
             </div>
         </transition>
     </div>
@@ -63,12 +84,6 @@ import TagItem from './TagItem.vue'
 // @ts-ignore
 import { data as blogPosts } from "../posts.data.mts";
 
-// 使用响应式状态
-const loading = ref(true)
-const posts = ref<Post[]>([])
-const selectTag = ref('')
-const router = useRouter()
-
 interface Post {
     title: string
     url: string
@@ -82,6 +97,13 @@ interface Post {
     excerpt: string | undefined
 }
 
+// 使用响应式状态
+const loading = ref<boolean>(true)
+const posts = ref<Post[]>([])
+const selectTag = ref<string>('')
+const isExpanded = ref<boolean>(false)
+const router = useRouter()
+
 // 处理数据
 const data = computed<TagsData>(() => {
     const result = initTags(posts.value)
@@ -94,8 +116,18 @@ const data = computed<TagsData>(() => {
     return result
 })
 
+// 所有文章列表
+const allPosts = computed<Post[]>(() => {
+    return posts.value.sort((a: Post, b: Post) => b.date.time - a.date.time)
+})
+
+// 切换标签展开/收起状态
+function toggleExpand(): void {
+    isExpanded.value = !isExpanded.value
+}
+
 // 切换标签
-function toggleTag(tag: string) {
+function toggleTag(tag: string): void {
     console.log('切换标签:', tag, '当前选中:', selectTag.value);
     
     if (selectTag.value === tag) {
@@ -124,26 +156,39 @@ function toggleTag(tag: string) {
 }
 
 // 监听标签选择事件
-function handleTagSelected(event: CustomEvent) {
+function handleTagSelected(event: CustomEvent): void {
     const tag = event.detail
     console.log('TagsView收到标签选择事件:', tag);
     if (tag && typeof tag === 'string') {
         // 使用nextTick确保DOM已更新
         nextTick(() => {
-            selectTag.value = tag;
-            
-            // 检查标签数据
-            if (data.value[tag]) {
-                console.log(`通过事件选中标签 ${tag} 下有 ${data.value[tag].length} 篇文章`);
+            // 如果是当前已选中的标签，则取消选择
+            if (selectTag.value === tag) {
+                selectTag.value = '';
+                console.log('取消选中标签:', tag);
+                
+                // 更新URL参数，但不刷新页面
+                if (typeof window !== 'undefined') {
+                    const url = new URL(window.location.href)
+                    url.searchParams.delete('tag')
+                    window.history.replaceState({}, '', url.toString())
+                }
             } else {
-                console.warn(`事件选中的标签 ${tag} 在数据中不存在!`);
-            }
-            
-            // 更新URL参数，但不刷新页面
-            if (typeof window !== 'undefined') {
-                const url = new URL(window.location.href)
-                url.searchParams.set('tag', tag)
-                window.history.replaceState({}, '', url.toString())
+                selectTag.value = tag;
+                
+                // 检查标签数据
+                if (data.value[tag]) {
+                    console.log(`通过事件选中标签 ${tag} 下有 ${data.value[tag].length} 篇文章`);
+                } else {
+                    console.warn(`事件选中的标签 ${tag} 在数据中不存在!`);
+                }
+                
+                // 更新URL参数，但不刷新页面
+                if (typeof window !== 'undefined') {
+                    const url = new URL(window.location.href)
+                    url.searchParams.set('tag', tag)
+                    window.history.replaceState({}, '', url.toString())
+                }
             }
         })
     }
@@ -182,9 +227,10 @@ onMounted(async () => {
                         console.warn(`URL选中的标签 ${tagParam} 在数据中不存在!`);
                     }
                 }, 100);
-            } else if (Object.keys(data.value).length > 0) {
-                selectTag.value = Object.keys(data.value)[0] || ''
-                console.log('默认选中第一个标签:', selectTag.value);
+            } else {
+                // 默认不选择任何标签，显示所有文章
+                selectTag.value = ''
+                console.log('默认不选择任何标签，显示所有文章');
             }
         }
     } catch (error) {
@@ -237,6 +283,7 @@ watch(selectTag, (newTag) => {
 .tags-wrapper {
     position: relative;
     padding: 0 15px;
+    margin-bottom: 40px; /* 增加下方空间 */
 }
 
 .tags-fade-left, .tags-fade-right, .tags-fade-top, .tags-fade-bottom, .posts-fade-bottom {
@@ -282,17 +329,58 @@ watch(selectTag, (newTag) => {
     flex-wrap: wrap;
     gap: 8px;
     margin: 10px 0;
-    max-height: 150px;
-    overflow-y: auto;
-    padding: 15px 5px 12px;
+    max-height: 40px; /* 只显示一行 */
+    overflow: hidden;
+    padding: 5px 40px 5px 5px; /* 右侧增加padding，为按钮留空间 */
     border-radius: 12px;
     position: relative;
+    transition: max-height 0.3s ease;
+}
+
+.tags.expanded {
+    max-height: 200px; /* 展开高度 */
+    overflow-y: auto; /* 允许滚动 */
+    padding-right: 40px; /* 保持右侧padding，避免内容覆盖按钮 */
+}
+
+/* 确保展开后滚动条不显示 */
+.tags.expanded::-webkit-scrollbar {
+    display: none;
+}
+
+.tags.expanded {
     scrollbar-width: none; /* Firefox */
 }
 
-/* 隐藏滚动条 */
-.tags::-webkit-scrollbar {
-    display: none;
+.expand-button {
+    position: absolute;
+    right: 15px;
+    top: 15px; /* 固定在顶部 */
+    cursor: pointer;
+    z-index: 10; /* 提高层级确保在最上层 */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.expand-button:hover {
+    color: var(--vp-c-brand);
+}
+
+.expand-icon {
+    font-size: 18px; /* 增大字体大小 */
+    font-weight: bold; /* 加粗显示 */
+    color: var(--vp-c-brand); /* 使用品牌色使其更明显 */
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.expand-icon.expanded {
+    transform: rotate(0deg);
 }
 
 .tag-header {
@@ -532,5 +620,29 @@ watch(selectTag, (newTag) => {
 .fade-leave-to {
     opacity: 0;
     transform: translateY(10px);
+}
+
+.posts-by-tag {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tag-group {
+    margin-bottom: 10px;
+}
+
+.tag-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--vp-c-brand);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--vp-c-divider-light);
+    font-family: 'Source Han Serif', serif;
+}
+
+.tag-posts {
+    padding-left: 10px;
 }
 </style> 
