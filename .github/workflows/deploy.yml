@@ -59,9 +59,12 @@ jobs:
       
       - name: Build
         run: pnpm run docs:build
+        
+      - name: Copy CNAME
+        run: cp CNAME docs/.vitepress/dist/
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: docs/.vitepress/dist
 
@@ -71,7 +74,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
+    env:
+      RETRY_ATTEMPTS: 3
+      RETRY_DELAY: 5000
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v3 
+        uses: actions/deploy-pages@v2 
