@@ -13,6 +13,8 @@ const themeName = blogConfig.theme || 'default'
 const config = (blogConfig as any)[themeName]?.config || {}
 
 export default defineConfig({
+  // 使用自定义域名时设置base为'/'
+  base: '/',
   ...config,
   async transformHead(context) {
     return handleHeadMeta(context)
