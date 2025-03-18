@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Justin3go</title>
+        <link>https://justin3go.com</link>
+        <description>坚持深耕技术领域的 T 型前端程序员, 关注独立开发，喜欢 Vuejs、Nestjs, 还会点 Python、搜索引擎、NLP、Web3、后端</description>
+        <lastBuildDate>Tue, 18 Mar 2025 07:07:23 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>zh-Hans</language>
+        <image>
+            <title>Justin3go</title>
+            <url>https://oss.justin3go.com/justin3goAvatar.jpg</url>
+            <link>https://justin3go.com</link>
+        </image>
+        <copyright>Copyright© 2021-present Justin3go</copyright>
+        <item>
+            <title><![CDATA[前端自给自足UI设计稿（Claude AI 版本）]]></title>
+            <link>https://justin3go.com/posts/2025/03/03-front-end-self-sufficient-ui-design-claude-ai-version</link>
+            <guid>https://justin3go.com/posts/2025/03/03-front-end-self-sufficient-ui-design-claude-ai-version</guid>
+            <pubDate>Mon, 03 Mar 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="前端自给自足ui设计稿-claude-ai-版本" tabindex="-1">前端自给自足UI设计稿（Claude AI 版本） <a class="header-anchor" href="#前端自给自足ui设计稿-claude-ai-版本" aria-label="Permalink to &quot;前端自给自足UI设计稿（Claude AI 版本）&quot;">&ZeroWidthSpace;</a></h1>
+<blockquote>
+<p>✨文章摘要（AI生成）</p>
+</blockquote>
+<!-- DESC SEP -->
+<p>笔者最近探索了如何借助 AI（特别是 Claude）来协助前端开发者完成 UI 设计工作。通过实践发现，Claude 在这方面表现出色，能够快速生成符合现代设计趋势的界面设计。</p>
+<p>在这篇文章中，我以一个健康类 APP 为例，演示了如何通过简单的提示词引导 AI 完成设计工作。整个过程分为几个核心模块：<strong>首页概览</strong>、<strong>运动计划</strong>、<strong>饮食管理</strong>以及<strong>社区功能</strong>。通过分模块设计的方式，不仅避免了 AI 模型的输出限制问题，还能让设计更加聚焦和精细。</p>
+<p>为了提高效率和可用性，我在提示词中特别强调了以下几点：</p>
+<ul>
+<li>使用 Tailwind CSS（CDN方式）实现样式</li>
+<li>采用 Lucide Static CDN 处理图标</li>
+<li>将相关页面整合在同一个 HTML 文件中</li>
+</ul>
+<p>通过对比测试，目前 Claude（特别是 3.5 版本）在该场景下的表现最为稳定。而 GPT-4o 和 DeepSeek 等其他模型在完成类似任务时还存在一定差距。</p>
+<!-- DESC SEP -->
+<h2 id="先看效果" tabindex="-1">先看效果 <a class="header-anchor" href="#先看效果" aria-label="Permalink to &quot;先看效果&quot;">&ZeroWidthSpace;</a></h2>
+<h3 id="健康类-app" tabindex="-1">健康类 APP <a class="header-anchor" href="#健康类-app" aria-label="Permalink to &quot;健康类 APP&quot;">&ZeroWidthSpace;</a></h3>
+<p>输入：健康类 APP</p>
+<blockquote>
+<p>AI 开始思考并设计功能，以及统一设计风格；然后调用可视化插件进行 HTML 的预览（这些步骤你也可以在 Cursor 等编辑器完成，然后直接预览 HTML 即可）</p>
+</blockquote>
+<p>效果如下：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020250303145429.png" alt=""></p>
+<blockquote>
+<p>然后，AI 继续问我是否继续，继续哪一个模块。</p>
+</blockquote>
+<p>输入：继续【运动计划模块】</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020250303145552.png" alt=""></p>
+<p>同样，输入：继续【饮食管理模块】</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020250303145940.png" alt=""></p>
+<p>最后，输入：继续【社区功能】</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020250303150626.png" alt=""></p>
+<h3 id="播客类-app" tabindex="-1">播客类 APP <a class="header-anchor" href="#播客类-app" aria-label="Permalink to &quot;播客类 APP&quot;">&ZeroWidthSpace;</a></h3>
+<blockquote>
+<p>输入播客类 APP，然后一直继续下去就可以了，效果如下：</p>
+</blockquote>
+<p><img src="https://oss.justin3go.com/blogs/20250304155943507.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160130247.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160202306.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160231953.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160254854.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160309438.png" alt=""></p>
+<h3 id="类似推特的-app" tabindex="-1">类似推特的 APP <a class="header-anchor" href="#类似推特的-app" aria-label="Permalink to &quot;类似推特的 APP&quot;">&ZeroWidthSpace;</a></h3>
+<blockquote>
+<p>输入推特类 APP，然后一直继续下去就可以了，效果如下：</p>
+</blockquote>
+<p><img src="https://oss.justin3go.com/blogs/20250304160402030.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160418750.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160436182.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160451704.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/20250304160513726.png" alt=""></p>
+<h2 id="提示词如下" tabindex="-1">提示词如下 <a class="header-anchor" href="#提示词如下" aria-label="Permalink to &quot;提示词如下&quot;">&ZeroWidthSpace;</a></h2>
+<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>## 你是谁</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>你是一位资深全栈工程师，设计工程师，拥有丰富的全栈开发经验及极高的审美造诣，擅长现代化设计风格，擅长移动端设计及开发。</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 你要做什么</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. 用户将提出一个【APP 需求】</span></span>
+<span class="line"><span>2. 设计这个【APP 需求】，模拟产品经理提出需求和信息架构，请自己构思好功能需求和界面</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>> 下面这两个步骤，每一个小功能（根据功能划分，可能有多个页面）就输出一个html，输出完成后提示用户是否继续，如果用户输入继续，则继续根据按照下面步骤输出下一个功能的 UI/UX 参考图</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>3. 然后使用 html + tailwindcss 设计 UI/UX 参考图</span></span>
+<span class="line"><span>4. 调用【Artifacts】插件可视化预览该 UI/UX 图（可视化你编写的 html 代码）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 要求</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- 要高级有质感（运用玻璃拟态等视觉效果），遵守设计规范，注重UI细节</span></span>
+<span class="line"><span>- 请引入 tailwindcss CDN 来完成，而不是编写 style 样式，图片使用 unslash，界面中不要有滚动条出现</span></span>
+<span class="line"><span>- 图标使用 Lucide Static CDN 方式引入，如`https://unpkg.com/lucide-static@latest/icons/XXX.svg`，而不是手动输出 icon svg 路径</span></span>
+<span class="line"><span>- 将一个功能的所有页面写入到一个 html 中（为每个页面创建简单的 mockup 边框预览，横向排列），每个页面在各自的 mockup 边框内相互独立，互不影响</span></span>
+<span class="line"><span>- 思考过程仅思考功能需求、设计整体风格等，不要在思考时就写代码，仅在最终结果中输出代码</span></span></code></pre>
+</div><p>基本思路：</p>
+<p>就是通过 HTML + Tailwind 生成对应的代码然后运行即可，使用 CDN 方式引入 Taiwind 方便直接预览，而不用执行漫长的<code>npm install</code>了</p>
+<p>一些小技巧：</p>
+<ul>
+<li>使用 Lucide Icon CDN 避免 AI 消耗大量 Token 来绘制 SVG 路径</li>
+<li>使用分功能分块，然后继续的方式，避免出现截断问题（目前 Claude 3.7 截断问题非常严重，所以暂时使用 Claude 3.5 替代，效果也还不错）</li>
+<li>提前想好功以及整体设计风格，方便后续分功能设计页面时进行参考</li>
+</ul>
+<h2 id="其他模型呢" tabindex="-1">其他模型呢 <a class="header-anchor" href="#其他模型呢" aria-label="Permalink to &quot;其他模型呢&quot;">&ZeroWidthSpace;</a></h2>
+<p>2025-03-03 尝试的，其他模型效果大部分都不行，Claude 3.7 效果还行，但经常被截断，不够稳定，可以观望一下。</p>
+<p>其他模型仅仅尝试过两个非推理模型，大家可以自行尝试。</p>
+<h3 id="gpt-4o" tabindex="-1">GPT-4o <a class="header-anchor" href="#gpt-4o" aria-label="Permalink to &quot;GPT-4o&quot;">&ZeroWidthSpace;</a></h3>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020250303150737.png" alt=""></p>
+<h3 id="deepseek" tabindex="-1">DeepSeek <a class="header-anchor" href="#deepseek" aria-label="Permalink to &quot;DeepSeek&quot;">&ZeroWidthSpace;</a></h3>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020250303150817.png" alt=""></p>
+<h2 id="参考" tabindex="-1">参考 <a class="header-anchor" href="#参考" aria-label="Permalink to &quot;参考&quot;">&ZeroWidthSpace;</a></h2>
+<p>参考自如下两位博主的思路分享</p>
+<ul>
+<li><a href="https://x.com/huangzh65903362/status/1895991413881651504" target="_blank" rel="noreferrer">Cursor 让普通人也能轻松设计一套 APP 精美 UI 2.0 版本</a></li>
+<li><a href="https://x.com/fengbuyou/status/1894801574716940616" target="_blank" rel="noreferrer">你好，我是「今天又是被取代的一天」服务，这是我 300 秒做的 UI/UX 设计（我是 claude3.7 thinking btw</a></li>
+</ul>
+]]></content:encoded>
+            <author>just@justin3go.com (Justin3go)</author>
+        </item>
+        <item>
+            <title><![CDATA[DeepSeek具体到普通人的意义]]></title>
+            <link>https://justin3go.com/posts/2025/01/31-how-deepseek-matters-to-everyone</link>
+            <guid>https://justin3go.com/posts/2025/01/31-how-deepseek-matters-to-everyone</guid>
+            <pubDate>Fri, 31 Jan 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="deepseek具体到普通人的意义" tabindex="-1">DeepSeek具体到普通人的意义 <a class="header-anchor" href="#deepseek具体到普通人的意义" aria-label="Permalink to &quot;DeepSeek具体到普通人的意义&quot;">&ZeroWidthSpace;</a></h1>
+<blockquote>
+<p>✨文章摘要（AI生成）</p>
+</blockquote>
+<!-- DESC SEP -->
+<p>作为一个普通技术爱好者，我深切地感受到 DeepSeek 模型的革命性意义。它不仅仅是一个高性能的开源大模型，更是打破了传统 AI 使用的诸多限制。从效果到开源，从本地部署到中文能力，DeepSeek 为我们普通用户提供了前所未有的可能性。</p>
+<!-- DESC SEP -->
+<p><img src="https://oss.justin3go.com/blogs/how-deepseek-matters-to-everyone-cover.png" alt=""></p>
+<blockquote>
+<p>原文链接：<a href="https://justin3go.com/posts/how-deepseek-matters-to-everyone" target="_blank" rel="noreferrer">justin3go.com</a></p>
+</blockquote>
+<h2 id="概述" tabindex="-1">概述 <a class="header-anchor" href="#概述" aria-label="Permalink to &quot;概述&quot;">&ZeroWidthSpace;</a></h2>
+<p>最近，DeepSeek 很火，几乎被刷屏了，甚至 Github Trending 整页几乎都是 DeepSeek 相关的内容。</p>
+<p>毫无疑问，DeepSeek 的出现是具有重大意义的，当然，目前还有一些争议，这里不做讨论。我更在乎 DeepSeek 具体到我这种普通人有什么作用、帮助～</p>
+<p>追根溯源，DeepSeek 的作用、优势基本都是从这三点延伸出来的：</p>
+<ol>
+<li><strong>效果好</strong>：模型能力追赶甚至超越了世界顶尖大模型们的水准，这是前提，只有效果好，后续的两点才会更有价值；</li>
+<li><strong>开源</strong>：意味着可以本地部署，也就是有本地化的那些优势，可以微调、无限制使用、隐私等；</li>
+<li><strong><a href="https://x.com/DavidSHolz/status/1883222685741879722" target="_blank" rel="noreferrer">数据优势</a></strong>：在古代中国哲学和文学方面压倒了西方模型，中国的文学历史比西方多几千年（因为他们失去了大部分的罗马/希腊/埃及文学）。</li>
+</ol>
+<p>除此之外，还有一些锦上添花的功能，如深度思考时也支持联网搜索，显式展示思维链思考过程。</p>
+<h2 id="具体呢" tabindex="-1">具体呢？ <a class="header-anchor" href="#具体呢" aria-label="Permalink to &quot;具体呢？&quot;">&ZeroWidthSpace;</a></h2>
+<p>基于上面三点核心优势，这里我简单列一下具体的一些优势，当然，欢迎补充：</p>
+<ol>
+<li>解除金钱上的限制，本地部署后，当你需要做一些长任务的时候，比如翻译，就不需要担心金额的消耗了；</li>
+<li>解除速率的限制，本地部署后，这是你自己的模型，速率完全取决于你的本地算力，相对于调用API来说，OpenAI 做了分等级的速率限制的，甚至稍有异常还会被封账号；</li>
+<li>解除地区的限制，很多顶尖大模型的API调用都限制了有些地区（如中国）无法使用这些API，客户端等</li>
+<li>解除应用级别的限制，正因为之前许多大模型限制地区的API调用，不少应用也不得不放弃了该地区的用户，据我所知，字节的 AI IDE Trae 在中国是无法正常使用的</li>
+<li>作为独立开发者也可以有更好的模型选择了，也不用去使用各种魔法了</li>
+<li>隐私的保护，很多企业都限制员工使用 Cursor、Copilot 等 AI 编码助手，即使它承诺不拿你的数据去优化它的模型，但你还是会把关键数据、代码发送过去，因为这是远程的 API 调用</li>
+<li>中文的限制，<a href="https://x.com/Gorden_Sun/status/1884938028675944693" target="_blank" rel="noreferrer">似乎有一些大模型</a>已经开始限制中文的输入了，也有大模型的中文输入的效果会弱于英文输入的效果，特别是在大模型出现的早期；</li>
+<li>中文写作，DeepSeek 在古代中国哲学和文学方面压倒了西方模型，在中文写作方面的效果会更好；</li>
+<li>玄学算命，同上，DeepSeek 更加了解中国文化，已经有<a href="https://x.com/benshandebiao/status/1884466428792955154" target="_blank" rel="noreferrer">网友</a>在使用它披八字了，效果还好，完全碾压；</li>
+<li>DeepSeek R1 1.5B 通过 WebGPU 在浏览器中完全本地运行，边缘计算也有更好的选择；</li>
+</ol>
+<h2 id="最后" tabindex="-1">最后 <a class="header-anchor" href="#最后" aria-label="Permalink to &quot;最后&quot;">&ZeroWidthSpace;</a></h2>
+<p>感谢 DeepSeek 将这个世界一流水准的基础模型开源～ 这不仅让我这种普通人、开发者有了更多选择，也从某种程度上刺激了技术的发展。</p>
+]]></content:encoded>
+            <author>just@justin3go.com (Justin3go)</author>
+        </item>
+        <item>
+            <title><![CDATA[独立开发做了个800+免费模板导航]]></title>
+            <link>https://justin3go.com/posts/2025/01/21-independent-dev-800-free-templates-navigation</link>
+            <guid>https://justin3go.com/posts/2025/01/21-independent-dev-800-free-templates-navigation</guid>
+            <pubDate>Tue, 21 Jan 2025 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="独立开发做了个800-免费模板导航" tabindex="-1">独立开发做了个800+免费模板导航 <a class="header-anchor" href="#独立开发做了个800-免费模板导航" aria-label="Permalink to &quot;独立开发做了个800+免费模板导航&quot;">&ZeroWidthSpace;</a></h1>
+<blockquote>
+<p>✨文章摘要（AI生成）</p>
+</blockquote>
+<!-- DESC SEP -->
+<p>笔者很高兴向大家介绍我开发的网站 <a href="https://template0.com/" target="_blank" rel="noreferrer">template0.com</a> —— 一个专注于收集高质量免费模板的目录网站。作为创始人，我深信成功往往始于一个好的模板，而不是从零开始。这也是网站命名的由来：template（模板）在0之前，同时0也象征着所有模板都是免费（$0）的。</p>
+<p>这个项目主要解决了三个痛点：</p>
+<ul>
+<li>优质免费模板难以被发现和获得足够曝光</li>
+<li>用户难以快速找到符合需求的免费模板</li>
+<li>缺乏一个探索和提升网站审美的平台</li>
+</ul>
+<p>网站提供了丰富的功能，包括：</p>
+<ul>
+<li>分类筛选系统</li>
+<li>精选合集展示</li>
+<li>博客内容输出</li>
+<li>免费模板提交</li>
+<li>个人收藏功能</li>
+</ul>
+<p>目前网站月活跃用户达到4k，页面浏览量14k，并保持稳定增长。我们通过赞助维持运营，确保所有内容对用户永久免费。欢迎各位来探索、收藏心仪的模板，也欢迎创作者提交自己的作品！</p>
+<!-- DESC SEP -->
+<blockquote>
+<p>原文链接：<a href="https://template0.com/blog/launch-v1" target="_blank" rel="noreferrer">template0.com</a></p>
+</blockquote>
+<p>目前正在<a href="https://www.producthunt.com/posts/template0" target="_blank" rel="noreferrer">ProductHunt</a>上进行启动，如果觉得这个站点对你有帮助，希望能得到你的正向反馈（Upvote &amp; Comment）</p>
+<h2 id="站点介绍" tabindex="-1">站点介绍 <a class="header-anchor" href="#站点介绍" aria-label="Permalink to &quot;站点介绍&quot;">&ZeroWidthSpace;</a></h2>
+<p><a href="https://template0.com/" target="_blank" rel="noreferrer">template0.com</a> 是一个目录网站，旨在收集互联网上可用的高质量免费模板，包括登录页面、博客、作品集、电子商务和管理仪表板等。</p>
+<p>为什么叫做 template0？它有两个含义：</p>
+<ol>
+<li>我坚信成功始于一个模板，而不是从零开始。“模板”在“0”之前，代表了这个意思。</li>
+<li>您也可以将 0 视为 $0，这意味着这里的所有模板都是免费的。</li>
+</ol>
+<p>为什么要创建这样一个网站？简单来说，有三个目的：</p>
+<ol>
+<li>高质量的免费模板常常被遗忘在某个角落。这是一个免费模板的展示网站。</li>
+</ol>
+<ul>
+<li>在谷歌搜索关键词时，免费模板常常被付费模板结果所掩盖。</li>
+<li>由于模板是免费的，许多创作者在推广上投入的精力不多，这使得优质模板难以获得曝光。</li>
+<li>许多由人们创建的免费模板没有特定的展示位置。Template0 就是这样一个目录网站，展示创作者的作品，并为探索者提供一个发现它们的平台。</li>
+</ul>
+<ol start="2">
+<li>想要的免费模板很难找到。</li>
+</ol>
+<ul>
+<li>许多模板缺乏关于目的、技术栈或预览图像的详细信息，这使得寻找模板的人很难找到他们所需的内容。</li>
+<li>许多免费模板需要注册才能下载。这些已被过滤掉。</li>
+<li>所有模板都经过基本筛选，以确保外观良好，并包含实时演示。</li>
+</ul>
+<ol start="3">
+<li>审美感源于探索。</li>
+</ol>
+<ul>
+<li>这是创建这个网站的另一个原因：鼓励探索和体验他人的网站，从而增强个人的审美感。</li>
+<li>所有网站内容都是手动收集或用户提交的，而不是通过网络爬虫大量抓取的。</li>
+<li>我将不断关注行业趋势，收集我遇到的高质量免费模板。网站的内容会不断更新。</li>
+</ul>
+<h2 id="预览及功能简介" tabindex="-1">预览及功能简介 <a class="header-anchor" href="#预览及功能简介" aria-label="Permalink to &quot;预览及功能简介&quot;">&ZeroWidthSpace;</a></h2>
+<h3 id="首页" tabindex="-1">首页 <a class="header-anchor" href="#首页" aria-label="Permalink to &quot;首页&quot;">&ZeroWidthSpace;</a></h3>
+<p>首页包含英雄模块、搜索快捷入口、赞助商模块、最近发布模块、精选模块、博客发布模块、邮件订阅模块以及页脚。</p>
+<p>预览：</p>
+<p><img src="https://oss.justin3go.com/blogs/home1.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/home2.png" alt=""></p>
+<p><img src="https://oss.justin3go.com/blogs/home3.png" alt=""></p>
+<h3 id="分类筛选页" tabindex="-1">分类筛选页 <a class="header-anchor" href="#分类筛选页" aria-label="Permalink to &quot;分类筛选页&quot;">&ZeroWidthSpace;</a></h3>
+<p>这里提供了更多的筛选条件，帮助大家更快捷地找到自己心仪地免费模板，如用途、技术栈、是否精选、预览图、发布时间及名字字母排序等。</p>
+<p>以及在顶部有一个赞助商轮播模块，底部也有和首页一样的邮件订阅和页脚模块。</p>
+<p>预览：</p>
+<p><img src="https://oss.justin3go.com/blogs/category.png" alt=""></p>
+<h3 id="合集" tabindex="-1">合集 <a class="header-anchor" href="#合集" aria-label="Permalink to &quot;合集&quot;">&ZeroWidthSpace;</a></h3>
+<p>为了支持大家从不同维度探索发现别人的免费模板，Template0提供了精选合集。</p>
+<p>预览：</p>
+<p><img src="https://oss.justin3go.com/blogs/collection.png" alt=""></p>
+<h3 id="blog页" tabindex="-1">Blog页 <a class="header-anchor" href="#blog页" aria-label="Permalink to &quot;Blog页&quot;">&ZeroWidthSpace;</a></h3>
+<p>除此之外，为了后续持续输出内容，提高搜索引擎的曝光，Template0还包含了一个Blog页，当然，目前博客输出较少，后续会慢慢输出的：</p>
+<p><img src="https://oss.justin3go.com/blogs/blog.png" alt=""></p>
+<h3 id="价格赞助页" tabindex="-1">价格赞助页 <a class="header-anchor" href="#价格赞助页" aria-label="Permalink to &quot;价格赞助页&quot;">&ZeroWidthSpace;</a></h3>
+<p>首先，声明一下，这个网站的所有内容都是免费的，无论是模板还是提交你自己的免费模板；网站维护仅依靠赞助：</p>
+<ul>
+<li>为避免过多打扰用户，赞助位仅有八位</li>
+<li>通过赞助金额（最高$99）排序，再通过最早赞助时间进行排序，取前8位进行展示</li>
+</ul>
+<p>预览：</p>
+<p><img src="https://oss.justin3go.com/blogs/pricing.png" alt=""></p>
+<h3 id="提交页" tabindex="-1">提交页 <a class="header-anchor" href="#提交页" aria-label="Permalink to &quot;提交页&quot;">&ZeroWidthSpace;</a></h3>
+<p>在这里，你可以免费提交你的免费模板，以获得免费的流量曝光，目前上个月该站点的流量为 uv：4k，pv：14k，目前正在持续增长中！</p>
+<p>template0.com 只是一个目录网站，不会托管任何预览内容或源代码。链接将指向您自己的网站，为您提供流量和 SEO 收益。</p>
+<p>template0.com 仅接受可以免费使用、带有实时演示并且外观良好的模板。如果您在 template0.com 上有免费模板，可以复制下面的徽章并将其放置在您的模板演示或库中的任何位置。</p>
+<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">a</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> href</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"https://template0.com/item/XXX"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> target</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"_blank"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">img</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"https://img.template0.com/template-$0-created-for-fun-v1.svg"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> alt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Template $0 - Created for Fun"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> style</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"height: 50px"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+</div><p>关于精选模板，精选模板没有商业内容，完全基于站长的个人偏好，重点关注以下几点：</p>
+<ol>
+<li>模板代码是否结构良好、文档齐全且易于修改。</li>
+<li>外观是否干净、现代且流畅。</li>
+<li>模板的整体外观是否是相对独特的设计，例如终端风格。</li>
+</ol>
+<p>通常，满足上述这些标准将导致被推荐。</p>
+<p>提交页预览：</p>
+<p><img src="https://oss.justin3go.com/blogs/submit%201.png" alt=""></p>
+<p>提交之后会等待审核，一般三天之内我会审核完成并发布，以避免一些非免费内容和其他不恰当的内容出现在站点中，比如之前就收到过NSFW的提交。</p>
+<p>提交之后，你可以在Dashboard页中看到自己提交的项目并进行管理。</p>
+<h3 id="收藏功能" tabindex="-1">收藏功能 <a class="header-anchor" href="#收藏功能" aria-label="Permalink to &quot;收藏功能&quot;">&ZeroWidthSpace;</a></h3>
+<p>你可以在这里肆意探索你喜欢的模板，在详情页点击收藏，在Dashboard页找到你私有的收藏列表，方便后续要使用时，快速找到！</p>
+<p><img src="https://oss.justin3go.com/blogs/favorites.png" alt=""></p>
+<h2 id="最后" tabindex="-1">最后 <a class="header-anchor" href="#最后" aria-label="Permalink to &quot;最后&quot;">&ZeroWidthSpace;</a></h2>
+<p>欢迎大家来这里探索自己想要的免费模板，或者仅仅是想要看看别人做的网站是什么样的，这里也是一个不错的选择~</p>
+<p>也欢迎大家提交自己的免费模板到站点中，提交都是免费的！</p>
+<p>如果你有任何建议，欢迎通过任何方式联系我（站点页脚下的联系方式）</p>
+]]></content:encoded>
+            <author>just@justin3go.com (Justin3go)</author>
+        </item>
+        <item>
+            <title><![CDATA[微信小程序为DOM无缝增加open-type开放能力]]></title>
+            <link>https://justin3go.com/posts/2024/10/21-wechat-mini-program-dom-open-type-capability</link>
+            <guid>https://justin3go.com/posts/2024/10/21-wechat-mini-program-dom-open-type-capability</guid>
+            <pubDate>Mon, 21 Oct 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="微信小程序为dom无缝增加open-type开放能力" tabindex="-1">微信小程序为DOM无缝增加open-type开放能力 <a class="header-anchor" href="#微信小程序为dom无缝增加open-type开放能力" aria-label="Permalink to &quot;微信小程序为DOM无缝增加open-type开放能力&quot;">&ZeroWidthSpace;</a></h1>
+<blockquote>
+<p>✨文章摘要（AI生成）</p>
+</blockquote>
+<!-- DESC SEP -->
+<p>在这篇文章中，笔者分享了在开发微信小程序时，如何通过CSS技巧实现<code>button</code>和<code>cell</code>组件的协同工作。由于微信小程序出于安全考虑，无法通过JS模拟点击，因此必须在界面上使用<code>button</code>组件来调用开放能力，比如打开意见反馈页面。为了解决样式统一的问题，笔者将<code>button</code>嵌套在<code>cell</code>中，并通过CSS隐藏<code>button</code>的默认样式。</p>
+<p>然而，这样的做法导致<code>cell</code>的点击反馈消失，因为事件被<code>button</code>捕获。经过分析，笔者借助<code>pointer-events</code>属性，使得<code>button</code>不捕获鼠标事件，而其内部的<code>cell</code>组件可以正常响应点击。最终，笔者成功实现了既能打开反馈页面，又保留了<code>cell</code>的点击反馈效果的功能。这种方法有效地结合了样式与功能，为开发者提供了实用的解决方案。</p>
+<!-- DESC SEP -->
+<h2 id="前言" tabindex="-1">前言 <a class="header-anchor" href="#前言" aria-label="Permalink to &quot;前言&quot;">&ZeroWidthSpace;</a></h2>
+<p>最近在尝试 Vue Mini 这个框架，来开发一个小程序，祝我成功（因为半途而废的项目真的太多太多了）</p>
+<p>期间遇到一个场景，就是需要用户点击<code>cell</code>单元格组件时调用微信小程序提供的开放能力。比如，点击<code>cell</code>时打开意见反馈的页面。</p>
+<h2 id="遇到的问题-必须存在的button" tabindex="-1">遇到的问题 - 必须存在的Button <a class="header-anchor" href="#遇到的问题-必须存在的button" aria-label="Permalink to &quot;遇到的问题 - 必须存在的Button&quot;">&ZeroWidthSpace;</a></h2>
+<p>首先，微信小程序为了安全起见，是不支持JS模拟点击的操作的，即我是无法通过JS来打开意见反馈的功能。这也很好理解，因为比如用户手机号、头像等隐私信息如果可以通过JS来获取，那么你只要一登录该小程序，你的信息就被拿完了，而你却浑然不知。</p>
+<p>所以，页面上是必须存在<code>button</code>组件的，这里简单解释一下，微信小程序提供的能力都是放在<code>button</code>组件上的，比如刚才的意见反馈页面的打开，就只需要在<code>button</code>组件上加上<code>open-type=&quot;feedback&quot;</code>即可，更多开放能力可以参考<a href="https://developers.weixin.qq.com/miniprogram/dev/component/button.html" target="_blank" rel="noreferrer">微信小程序官方文档</a></p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020241021152722.png" alt=""></p>
+<p>但是为了页面统一，笔者这里是使用的<code>cell</code>，而这里又需要<code>button</code>，有没有办法让其共存呢，即样式展示的<code>cell</code>，而点击效果是触发的<code>button</code>。当然有，这里是本文接下来要讲到的。</p>
+<h2 id="解决问题-css隐藏button" tabindex="-1">解决问题 - CSS隐藏Button <a class="header-anchor" href="#解决问题-css隐藏button" aria-label="Permalink to &quot;解决问题 - CSS隐藏Button&quot;">&ZeroWidthSpace;</a></h2>
+<p>既然提到样式，很容易的想到使用CSS来解决，我们先找个位置放上这个<code>button</code>，这里笔者使用<code>button</code>套用<code>cell</code>组件，像下面这样：</p>
+<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">button</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> open-type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"feedback"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">t-cell</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"意见反馈"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> leftIcon</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"chat-message"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> hover</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> arrow</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">button</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+</div><p>此时页面的效果如下：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020241021154639.png" alt=""></p>
+<p>可以看到携带了一些<code>button</code>组件的自带样式，比如左右<code>padding</code>，<code>border</code>之类的，这里我们去除<code>button</code>自带的默认样式：</p>
+<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">button</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"no-style-btn"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> open-type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"feedback"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">t-cell</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"意见反馈"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> leftIcon</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"chat-message"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> hover</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> arrow</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">button</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+</div><div class="language-css vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">css</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">.no-style-btn</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  padding</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  border-radius</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">.no-style-btn::after</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  display</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">none</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>这是现在的效果：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020241021160054.png" alt=""></p>
+<h2 id="新的问题-消失的cell点击反馈" tabindex="-1">新的问题 - 消失的Cell点击反馈 <a class="header-anchor" href="#新的问题-消失的cell点击反馈" aria-label="Permalink to &quot;新的问题 - 消失的Cell点击反馈&quot;">&ZeroWidthSpace;</a></h2>
+<p>也支持点击跳转到意见反馈的页面了，看着没效果，但是稍微注意一下就会发现此时点击<code>cell</code>组件的点击反馈消失了，之前是会有这个置灰效果的（这里用上面的<code>cell</code>点击做演示）：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020241021160242.png" alt=""></p>
+<h2 id="分析问题-事件未传递给cell" tabindex="-1">分析问题 - 事件未传递给Cell <a class="header-anchor" href="#分析问题-事件未传递给cell" aria-label="Permalink to &quot;分析问题 - 事件未传递给Cell&quot;">&ZeroWidthSpace;</a></h2>
+<p>通过绑定<code>button</code>和<code>cell</code>组件打印日志：</p>
+<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">button</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"no-style-btn"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> open-type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"feedback"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> bind:tap</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"handleBtnTap"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">t-cell</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"意见反馈"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> leftIcon</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"chat-message"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> hover</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> arrow</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> bind:tap</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"handleCellTap"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">button</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+</div><p>我们可以清楚的看到我们在点击意见反馈时，<code>handleCellTap</code>根本没有触发，这也很好理解，事件被父元素的button给捕获了，自然不会传递给下面的子组件<code>cell</code>。</p>
+<h2 id="解决问题-pointer-events自定义事件触发" tabindex="-1">解决问题 - <code>pointer-events</code>自定义事件触发 <a class="header-anchor" href="#解决问题-pointer-events自定义事件触发" aria-label="Permalink to &quot;解决问题 - `pointer-events`自定义事件触发&quot;">&ZeroWidthSpace;</a></h2>
+<p>这里笔者稍微问了一个Claude，它给出了<code>pointer-events</code>方法来解决，简单来说，就是让<code>button</code>不进行事件捕获，让<code>cell</code>来捕获事件，然后通过事件冒泡的机制，自动向上传递。</p>
+<p>最终其实就这三句代码：</p>
+<div class="language-css vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">css</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">.no-style-btn</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  padding</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  border-radius</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  pointer-events</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">none</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">; </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">/* 让按钮不捕获鼠标事件 */</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">.no-style-btn</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> ></span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D"> view</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  pointer-events</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">auto</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">; </span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">/* 让按钮内的元素捕获鼠标事件 */</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">.no-style-btn::after</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  display</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">none</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>此时我们的意见反馈<code>cell</code>也有了对应的点击反馈，同时也能触发 open-type 的开放能力了：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020241021161142.png" alt=""></p>
+]]></content:encoded>
+            <author>just@justin3go.com (Justin3go)</author>
+        </item>
+        <item>
+            <title><![CDATA[第三次重构个人博客（基于 Vitepress）]]></title>
+            <link>https://justin3go.com/posts/2024/07/30-third-reconstruction-personal-blog-vitepress</link>
+            <guid>https://justin3go.com/posts/2024/07/30-third-reconstruction-personal-blog-vitepress</guid>
+            <pubDate>Tue, 30 Jul 2024 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="第三次重构个人博客-基于-vitepress" tabindex="-1">第三次重构个人博客（基于 Vitepress） <a class="header-anchor" href="#第三次重构个人博客-基于-vitepress" aria-label="Permalink to &quot;第三次重构个人博客（基于 Vitepress）&quot;">&ZeroWidthSpace;</a></h1>
+<blockquote>
+<p>✨文章摘要（AI生成）</p>
+</blockquote>
+<!-- DESC SEP -->
+<p>笔者在这篇文章中记录了自己第三次重构个人博客的过程，基于 Vitepress 进行了一系列的改进和优化。自 2022 年初开始使用 Vitepress 搭建博客，随着版本的更新，笔者逐渐感受到原有风格的不适，决定进行重新设计。本次重构的主要内容包括：</p>
+<ol>
+<li><strong>首页设计</strong>：采用简单的博客分页列表，利用<code>createContentLoader</code>提取文章摘要等信息。</li>
+<li><strong>部署与域名管理</strong>：将博客从 Github Pages 迁移至 Cloudflare Pages，并更改 DNS 服务器。</li>
+<li><strong>国际化支持</strong>：实现 Vitepress 和评论系统 Giscus 的国际化，支持中英双语。</li>
+<li><strong>内容迁移</strong>：对博客文章进行迁移，生成摘要和标签，确保旧路径的兼容性以避免外链失效。</li>
+<li><strong>优化用户体验</strong>：自定义字体并进行预加载，提升页面加载速度。</li>
+</ol>
+<p>通过这些调整，笔者希望博客不仅在内容上丰富，同时在视觉和使用体验上也能给读者带来更好的感受。最终，笔者强调了博客设计对写作心情的重要性，认为整理环境能够促进创作灵感的流动。</p>
+<!-- DESC SEP -->
+<h2 id="前言" tabindex="-1">前言 <a class="header-anchor" href="#前言" aria-label="Permalink to &quot;前言&quot;">&ZeroWidthSpace;</a></h2>
+<p>欢迎来到笔者的第三次博客折腾记录！生命不息，折腾不止~</p>
+<p>从 2022 年 01 月开始用 Vitepress 搭建我的博客网站，那时候 Vitepress 才 0.XX 版本，还没有正式发布呢。当时关于 Vitepress 的资料也非常少，网上一搜全是关于 Vuepress 的，官方文档也不完善；</p>
+<p>后面 Vitepress 发布了 1.0 的 Beta 版本，我将我的个人博客几乎重做了一遍，比如重新做了首页，最近发布的文章，评论从 Gitalk 转到 Giscus，用 Vitepress 自带的本地搜索而非使用第三方搜索插件等等；</p>
+<p>最近一段时间，其实也没有什么契机，就越来越看自己的博客不顺眼了，又花又丑，可能自己喜欢的风格变化了吧，甚至影响到我想写博客的心情了；</p>
+<p>所以，那就继续折腾吧，以简单顺眼为主。</p>
+<h2 id="概览" tabindex="-1">概览 <a class="header-anchor" href="#概览" aria-label="Permalink to &quot;概览&quot;">&ZeroWidthSpace;</a></h2>
+<p>在线地址：<a href="https://justin3go.com/" target="_blank" rel="noreferrer">justin3go.com</a></p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020240730212505.png" alt=""></p>
+<p>本次博客折腾大约做了这些事情，这里先简单总结一下：</p>
+<ol>
+<li>首页采取简单直接的博客分页列表，使用<code>createContentLoader</code>提取所有博客的摘要、标签、时间等信息，同时解决了 aside 在 page 变化后不更新的问题</li>
+<li>部署方式由 Github Page 更改为 Cloudflare Pages</li>
+<li>域名 DNS 服务器从阿里云迁移到 Cloudflare</li>
+<li>兼容以前的中文路径，将<code>/博客/**</code>及<code>/笔记/**</code>自动重定向到<code>/posts/**</code>和<code>/notes/**</code>，避免丢失外链</li>
+<li>Vitepress 的国际化</li>
+<li>Giscus 国际化及深浅切换，以及中英多语言时使用同一个评论框</li>
+<li>RSS 国际化</li>
+<li>TDesign 国际化及深浅切换</li>
+<li>自定义正文字体，以及字体预加载，导入非默认字体的 theme 以减少体积</li>
+<li>博客文章迁移、摘要标签生成，Giscus 评论迁移等体力活</li>
+</ol>
+<p>当然还有一些以前就存在的功能，搬来用了，比如：</p>
+<ol>
+<li><a href="https://justin3go.com/posts/2023/09/29vitepress%E4%B8%AD%E5%BC%95%E5%85%A5Tdesign%E5%B9%B6%E5%85%A8%E5%B1%80%E5%A2%9E%E5%8A%A0%E5%A4%A7%E5%9B%BE%E9%A2%84%E8%A7%88" target="_blank" rel="noreferrer">大图预览</a></li>
+<li><a href="https://justin3go.com/posts/2023/09/28vitepress%E4%B8%AD%E5%A2%9E%E5%8A%A0twitter%E5%8D%A1%E7%89%87" target="_blank" rel="noreferrer">OG 元信息生成以及 Twitter 卡片</a></li>
+<li><a href="https://github.com/Justin3go/justin3go.com/blob/release/docs/.vitepress/theme/style.css" target="_blank" rel="noreferrer">主题样式美化（也可能是丑化）</a></li>
+</ol>
+<p>好，接下来容我慢慢道来，也可以直接跳转到你感兴趣的目录。</p>
+<h2 id="vitepress-的国际化" tabindex="-1">Vitepress 的国际化 <a class="header-anchor" href="#vitepress-的国际化" aria-label="Permalink to &quot;Vitepress 的国际化&quot;">&ZeroWidthSpace;</a></h2>
+<p>这里简单了解一下 Vitepress 相关的知识，以便后续使用。当然，这些在<a href="https://vitepress.dev/zh/guide/i18n" target="_blank" rel="noreferrer">官方文档</a>中也有更为详细的介绍。</p>
+<p>vitepress 根据目录及文件生成对应路劲的静态内容，比如<code>/posts/blog-1.md</code>则会生成<code>/posts/blog-1.html</code>，然后部署后就可以通过<code>your-domain/posts.blog-1.html</code>访问。</p>
+<p>在 Vitepress 国际化时，你需要按照如下的目录配置：</p>
+<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span>docs/</span></span>
+<span class="line"><span>├─ en/</span></span>
+<span class="line"><span>│  ├─ foo.md</span></span>
+<span class="line"><span>├─ foo.md</span></span></code></pre>
+</div><p>对应刚才的例子，如果你需要英文的国际化，则是<code>/en/posts/blog-1.md</code>这个目录下添加对应的英文博客内容。</p>
+<p>之后，在 config 目录下，创建不同语言的不同配置即可，这里以中文为主要语言，更多配置<a href="https://github.com/Justin3go/justin3go.com/tree/release/docs/.vitepress/config" target="_blank" rel="noreferrer">查看仓库</a>：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { defineConfig } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'vitepress'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> shared </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> './shared'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> en </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> './en'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> zh </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> './zh'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> default</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> defineConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  ...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">shared,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  locales: {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    root: { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'简体中文'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">zh },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    en: { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'English'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">en },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">})</span></span></code></pre>
+</div><h2 id="首页博客分页列表实现" tabindex="-1">首页博客分页列表实现 <a class="header-anchor" href="#首页博客分页列表实现" aria-label="Permalink to &quot;首页博客分页列表实现&quot;">&ZeroWidthSpace;</a></h2>
+<p>总体来说就分为如下两步：</p>
+<ol>
+<li>获取数据</li>
+<li>展示数据</li>
+</ol>
+<h3 id="_1-获取数据" tabindex="-1">1.获取数据 <a class="header-anchor" href="#_1-获取数据" aria-label="Permalink to &quot;1.获取数据&quot;">&ZeroWidthSpace;</a></h3>
+<p>获取数据我们可以通过<a href="https://vitepress.dev/zh/guide/data-loading#createcontentloader" target="_blank" rel="noreferrer">Vitepress 提供的<code>createcontentloader</code></a>来快捷获取某个目录下的所有文章。</p>
+<blockquote>
+<p>该辅助函数接受一个相对于<a href="https://vitepress.dev/zh/guide/routing#source-directory" target="_blank" rel="noreferrer">源目录</a>的 glob 模式，并返回一个 <code>{ watch, load }</code> 数据加载对象，该对象可以用作数据加载文件中的默认导出。</p>
+<p>加载的数据将作为 JSON 内联在客户端 bundle 中。</p>
+</blockquote>
+<p>我们创建一个<code>posts.data.mts</code>文件作为数据加载文件，然后将<code>createcontentloader</code>返回的对象作为默认导出，里面做一些文章数据的提取和转换，有这些：</p>
+<ul>
+<li>摘要自定义提取函数<code>excerptFn</code>，后续会讲到</li>
+<li>获取 frontmatter 中的 title、date、tags 等所需数据</li>
+<li>将 date 转换，并按 date 排序文章</li>
+</ul>
+<p>代码如下（省略了类型文件）：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { createContentLoader } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'vitepress'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> default</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> createContentLoader</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'posts/**/*.md'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  excerpt: excerptFn,</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  transform</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">raw</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Post</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[] {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> raw</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(({ </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">url</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">frontmatter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">excerpt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> }) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> ({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        title: frontmatter.title,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        url,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        excerpt,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        date: </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">formatDate</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(frontmatter.date),</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        tags: frontmatter.tags</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      }))</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      .</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">b</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> b.date.time </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> a.date.time)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> excerptFn</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">file</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">data</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { [</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">key</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">]</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> }; </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">content</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">; </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">excerpt</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> }, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">options</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  file.excerpt </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> file.content.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">split</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'&#x3C;!-- DESC SEP -->'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">];</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> formatDate</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">raw</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Post</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'date'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">] {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> date</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(raw)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  date.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">setUTCHours</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">12</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    time: </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">+</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">date,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    string: date.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">toLocaleDateString</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'zh-Hans'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      year: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'numeric'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      month: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'2-digit'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      day: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'2-digit'</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    })</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>其中<code>excerptFn</code>是我自定义的摘要提取函数，用于识别被两个<code>&lt;!-- DESC SEP --&gt;</code>符号包裹的内容，最终提取出来并保存在数组中，需要的格式是这样：</p>
+<div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span># 标题</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;!-- DESC SEP --></span></span>
+<span class="line"><span>这是一段摘要</span></span>
+<span class="line"><span>&#x3C;!-- DESC SEP --></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>一些正文内容</span></span></code></pre>
+</div><p>同时，为了国际化，不同的首页需要不同文件夹下的数据，所以继续创建一个<code>posts-en.data.mts</code>文件，大致内容和上方一样，改了读取的目录以及时间格式化的参数为<code>en-US</code>。</p>
+<h3 id="_2-展示数据" tabindex="-1">2. 展示数据 <a class="header-anchor" href="#_2-展示数据" aria-label="Permalink to &quot;2. 展示数据&quot;">&ZeroWidthSpace;</a></h3>
+<p>接下来就是展示数据，我们将代码写在<code>index.md</code>中，英文的首页则是在<code>/en/index.md</code>中，当然，如果你设置的国际化 root 路径不是中文，则目录将有所不同。</p>
+<p>之所以将代码写在<code>index.md</code>中，是因为如果全部封装到一个 Vue 组件里，再导入到<code>index.md</code>中，会导致 Aside 在页面换页时不刷新，具体可以查看这个<a href="https://github.com/vuejs/vitepress/issues/2686" target="_blank" rel="noreferrer">Iusse #2686</a></p>
+<p>代码具体内容较简单，一个循环渲染当页的文章列表+一个分页器搞定（省略了样式文件）：</p>
+<div class="language-vue vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">vue</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> v-for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">post </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">in</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> curPosts</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> :</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">key</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">post.url</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">h2</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> :id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post.title"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post-title"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">a</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> :href</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post.url"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>{{ post.title }}&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">a</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"header-anchor"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      :href</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"`#${post.title}`"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      :aria-label</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"`Permalink to </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">&#x26;quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">${post.title}</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">&#x26;quot;</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      >​&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">a</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post-date hollow-text"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>{{ post.date.string }}&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">h2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">IndexTags</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> :tags</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post.tags"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> v-if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post.excerpt"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> v-html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"post.excerpt"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&#x3C;!-- &#x3C;Pagination /> --></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> class</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"pagination-container"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;t-pagination</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    v-model="current"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    v-model:pageSize="pageSize"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    :total="total"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    size="small"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    :showPageSize="false"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    :showPageNumber="!isMobile()"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    :showJumper="isMobile()"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    @current-change="onCurrentChange"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ts"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> setup</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { ref, computed } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "vue"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// 非 Vue 组件需要手动引入</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	MessagePlugin,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	PaginationProps,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	Pagination </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> TPagination,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  Tag </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> TTag,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">} </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "tdesign-vue-next"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { data </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> posts } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "./.vitepress/theme/posts.data.mts"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { isMobile } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "./.vitepress/theme/utils/mobile.ts"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> search</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> window.location.search.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">slice</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> searchParams</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> URLSearchParams</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(search);</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> page</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> searchParams.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">get</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"page"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">||</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> current</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ref</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">+</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">page);</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> pageSize</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ref</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">10</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> total</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ref</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(posts.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">length</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> curPosts</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> computed</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">	return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> posts.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">slice</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">		(current.value </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pageSize.value,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">		current.value </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">*</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> pageSize.value</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> onCurrentChange</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> PaginationProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"onCurrentChange"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">] </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">	index</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">	pageInfo</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	MessagePlugin.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">success</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`转到第${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">index</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}页`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">	const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> url</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> URL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(window.location </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> any</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	url.searchParams.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">set</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"page"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, index.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">toString</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">());</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	window.history.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">replaceState</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({}, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">""</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, url);</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	window.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">scrollTo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">		top: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	});</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+</div><p>这里使用的是<code>&lt;h2&gt;</code>来渲染标题而非<code>## title</code>，以及直接写的<code>&lt;a&gt;</code>来增加锚点，是因为直接使用 markdown 语法是有问题的，会导致锚点无法正确提取，所以使用 html 手动实现。</p>
+<p>具体可以看这个<a href="https://github.com/vuejs/vitepress/issues/3133" target="_blank" rel="noreferrer">Iusse #3133</a></p>
+<p>除此之外，这里还做了一些细节上的优化，如：</p>
+<ul>
+<li>移动端时分页器简化显示</li>
+<li>将分页参数同步到浏览器 url 之中</li>
+<li>分页后滚动到页面顶部</li>
+</ul>
+<p><code>/en/index.md</code>的内容也差不多，只是导入的是刚才创建的<code>posts-en.data.mts</code>，然后 TDesgin 使用对应的英文语言包，像这样：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> enConfig </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'tdesign-vue-next/es/locale/en_US'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span></code></pre>
+</div><div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">t-config-provider</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> :global-config</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"enConfig"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">t-pagination</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  v-model</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"current"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  v-model:pageSize</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"pageSize"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  :total</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"total"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  size</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"small"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  :showPageSize</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"false"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  :showPageNumber</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"!isMobile()"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  :showJumper</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"isMobile()"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	  @current-change</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"onCurrentChange"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	/></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">t-config-provider</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+</div><h2 id="域名-dns-的迁移及部署方式改变" tabindex="-1">域名 DNS 的迁移及部署方式改变 <a class="header-anchor" href="#域名-dns-的迁移及部署方式改变" aria-label="Permalink to &quot;域名 DNS 的迁移及部署方式改变&quot;">&ZeroWidthSpace;</a></h2>
+<p>由于之后打算写英文博客，面向全球用户，所以将我的域名<code>justin3go.com</code>交给了 Cloudflare 来管理。同时，也方便后续直接在 Cloudflare Pages 部署及绑定域名。</p>
+<p>至于为什么要从 Github Pages 更换到 Cloudflare Pages，主要原因是 Github Pages 没有分支在线预览的功能，这点挺关键的，经常会在线验证一些东西。</p>
+<p>迁移过程非常简单，以阿里云迁移 Cloudflare 为例，位置在<code>域名控制台 -&gt; 域名列表 -&gt; 点击管理按钮</code>，然后就进入如下这个页面，将 DNS 服务器修改为 Cloudflare 提供的服务器即可：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020240730092930.png" alt=""></p>
+<p>至于 Cloudflare 哪里，直接点击右上角的添加站点即可，然后跟随指导一步步来就能拿到对应的 DNS 服务器地址：</p>
+<p><img src="https://oss.justin3go.com/blogs/Pasted%20image%2020240730093159.png" alt=""></p>
+<h2 id="兼容以前的中文路径" tabindex="-1">兼容以前的中文路径 <a class="header-anchor" href="#兼容以前的中文路径" aria-label="Permalink to &quot;兼容以前的中文路径&quot;">&ZeroWidthSpace;</a></h2>
+<p>这次，为了国际化（英文的时候不显示中文的路径）我将基础路径<code>/博客/</code>与<code>/笔记/</code>更改为了<code>/posts/</code>与<code>/notes/</code>。</p>
+<p>但这回导致一个问题，即几乎丢失了所有的外链，别人从其他地方点击链接进入几乎必然 404，所以我们需要做重定向处理，这里使用了<a href="https://vitepress.dev/zh/reference/runtime-api#userouter" target="_blank" rel="noreferrer">Vitepress 提供的<code>onBeforeRouteChange</code></a></p>
+<p>代码如下（省略不相关代码）：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> default</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	enhanceApp</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({ </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">app</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">router</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> }) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">		router.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">onAfterRouteChanged</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">to</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">			// 兼容旧博客的中文路径，重定向到新路径，避免外链失效</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">			if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (to.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">startsWith</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">encodeURI</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'/博客/'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">))) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">				const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> newUrl</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> to.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">replace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">encodeURI</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'/博客/'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">), </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'/posts/'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">				window.location.href </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> newUrl</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">			}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">			if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (to.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">startsWith</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">encodeURI</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'/笔记/'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">))) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">				const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> newUrl</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> to.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">replace</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">encodeURI</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'/笔记/'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">), </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'/notes/'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">				window.location.href </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> newUrl</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">			}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">		}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	},</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span></code></pre>
+</div><p>这里需要注意中文路径需要做 url 编码，否者匹配不到就执行不到对应的逻辑了。</p>
+<h2 id="giscus-国际化" tabindex="-1">Giscus 国际化 <a class="header-anchor" href="#giscus-国际化" aria-label="Permalink to &quot;Giscus 国际化&quot;">&ZeroWidthSpace;</a></h2>
+<p>这里，我需要实现两个功能：</p>
+<ol>
+<li>Giscus 中的组件文本需要跟随国际化</li>
+<li>不同语言还是使用一个评论</li>
+</ol>
+<h3 id="_1-组件文本国际化" tabindex="-1">1. 组件文本国际化 <a class="header-anchor" href="#_1-组件文本国际化" aria-label="Permalink to &quot;1. 组件文本国际化&quot;">&ZeroWidthSpace;</a></h3>
+<ol>
+<li>我们通过当前页面的路劲是否是<code>/en</code>开头来判断是否为英文</li>
+<li>如果是英文，则传递 Giscus 对应英文的参数</li>
+</ol>
+<p>关键代码如下：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> lang</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> computed</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> route.path.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">startsWith</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"/en"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'en'</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'zh-Hans'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span></code></pre>
+</div><div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">Giscus</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	v-if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"showComment"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	repo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Justin3go/justin3go.com"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	repo-id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"R_kgDOJq6kjw"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	category</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Announcements"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	category-id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"DIC_kwDOJq6kj84CW7-L"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	mapping</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"specific"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	:term</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"term"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	strict</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"1"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	reactions-enabled</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"1"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	emit-metadata</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"0"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	input-position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"top"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	:theme</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"theme"</span></span>
+<span class="line highlighted"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	:lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"lang"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	loading</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"lazy"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	crossorigin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"anonymous"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">/></span></span></code></pre>
+</div><h3 id="_2-不同语言共享评论" tabindex="-1">2. 不同语言共享评论 <a class="header-anchor" href="#_2-不同语言共享评论" aria-label="Permalink to &quot;2. 不同语言共享评论&quot;">&ZeroWidthSpace;</a></h3>
+<p>这里我们使用 Giscus 映射模式中的特定字符串模式，以达到定制需求。</p>
+<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">Giscus</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	v-if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"showComment"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	repo</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Justin3go/justin3go.com"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	repo-id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"R_kgDOJq6kjw"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	category</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Announcements"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	category-id</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"DIC_kwDOJq6kj84CW7-L"</span></span>
+<span class="line highlighted"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	mapping</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"specific"</span></span>
+<span class="line highlighted"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	:term</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"term"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	strict</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"1"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	reactions-enabled</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"1"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	emit-metadata</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"0"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	input-position</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"top"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	:theme</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"theme"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	:lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"lang"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	loading</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"lazy"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	crossorigin</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"anonymous"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">/></span></span></code></pre>
+</div><p>为了共享同一个评论，不同国际化页面需要有相同的唯一表示，其中 term 字符串需要传递这个唯一标识，这个标识我们通过截取路径获得：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> term</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> computed</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> route.path.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">startsWith</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"/en"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> route.path.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">slice</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">3</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> route.path);</span></span></code></pre>
+</div><h2 id="rss-国际化" tabindex="-1">RSS 国际化 <a class="header-anchor" href="#rss-国际化" aria-label="Permalink to &quot;RSS 国际化&quot;">&ZeroWidthSpace;</a></h2>
+<p>这里需要实现的功能是，读者在不同国际化页面中时，订阅链接是不同的，对应的<code>feed.xml</code>文件也是提取的相应语言下的博客列表。</p>
+<p>基本思路如下：</p>
+<ol>
+<li>为不同的国际化语言生成不同的<code>feed.xml</code>文件，比如英文的叫做<code>feed-en.xml</code></li>
+<li>nav 上的 rss 链接跟随语言变化指向不同的文件</li>
+</ol>
+<p>如下，是我的中文 RSS 生成方法：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> path </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "node:path"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { writeFileSync } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "node:fs"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { Feed } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "feed"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { createContentLoader, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> SiteConfig } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "vitepress"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> hostname</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "https://justin3go.com"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> async</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> createRssFileZH</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">config</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> SiteConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> feed</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Feed</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    title: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Justin3go'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    description: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'坚持深耕技术领域的 T 型前端程序员, 关注独立开发，喜欢 Vuejs、Nestjs, 还会点 Python、搜索引擎、NLP、Web3、后端'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    id: hostname,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    link: hostname,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    language: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"zh-Hans"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    image: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"https://justin3go.com/ava.jpg"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    favicon: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`https://oss.justin3go.com/justin3goAvatar.ico`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    copyright: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Copyright© 2021-present Justin3go"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> posts</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> await</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> createContentLoader</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"posts/**/*.md"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    excerpt: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    render: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">load</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  posts.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">b</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">+new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(b.frontmatter.date) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> +new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(a.frontmatter.date)));</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">url</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">excerpt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">frontmatter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">of</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> posts) {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    // 仅保留最近 5 篇文章</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (feed.items.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">length</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> >=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 5</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">      break</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    feed.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      title: frontmatter.title,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      id: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">hostname</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">url</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      link: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">hostname</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">url</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      description: excerpt,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      content: html,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      author: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          name: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Justin3go"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          email: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"just@justin3go.com"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          link: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"https://justin3go.com"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      date: frontmatter.date,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    });</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  writeFileSync</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(path.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">join</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(config.outDir, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"feed.xml"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">), feed.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">rss2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(), </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"utf-8"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>英文的基本一致，网站信息、提取目录和生成文件名变化了：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> async</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> createRssFileEN</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">config</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> SiteConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> feed</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Feed</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    title: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Justin3go"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    description: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"A T-shaped front-end developer who is committed to deepening expertise in the technical field, focuses on independent development, enjoys working with Vue.js and Nest.js, and has some knowledge of Python, search engines, NLP, Web3, and back-end development."</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    id: hostname,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    link: hostname,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    language: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"en-US"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    image: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"https://justin3go.com/ava.jpg"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    favicon: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`https://oss.justin3go.com/justin3goAvatar.ico`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    copyright: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Copyright© 2021-present Justin3go"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> posts</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> await</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> createContentLoader</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"en/posts/**/*.md"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    excerpt: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    render: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }).</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">load</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  posts.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sort</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">b</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Number</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">+new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(b.frontmatter.date) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> +new</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> Date</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(a.frontmatter.date)));</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  for</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">const</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">url</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">excerpt</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">frontmatter</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">of</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> posts) {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">    // 仅保留最近 5 篇文章</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (feed.items.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">length</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> >=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 5</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">      break</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    feed.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">addItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      title: frontmatter.title,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      id: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">hostname</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">url</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      link: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">hostname</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}${</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">url</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      description: excerpt,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      content: html,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      author: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          name: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"Justin3go"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          email: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"just@justin3go.com"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          link: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"https://justin3go.com"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      date: frontmatter.date,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    });</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  writeFileSync</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(path.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">join</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(config.outDir, </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"feed-en.xml"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">), feed.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">rss2</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(), </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"utf-8"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>然后我们在<a href="https://vitepress.dev/zh/reference/site-config#buildend" target="_blank" rel="noreferrer">buildEnd</a>钩子中执行这两个函数以生成对应的文件。</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">buildEnd</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">config</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> SiteConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	createRssFileZH</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(config);</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">	createRssFileEN</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(config);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">},</span></span></code></pre>
+</div><p>最后，不同的 config，如<code>zh.ts</code>和<code>en.ts</code>中的<code>socialLinks</code>配置不同的路径即可：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// zh.ts</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">socialLinks</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// ...</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	{</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	icon: {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	  svg: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'...'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	},</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	link: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"/feed.xml"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	},</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">],</span></span></code></pre>
+</div><div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// en.ts</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">socialLinks</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// ...</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	{</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	icon: {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	  svg: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'...'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	},</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	link: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"/feed-en.xml"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">	},</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">],</span></span></code></pre>
+</div><h2 id="自定义字体" tabindex="-1">自定义字体 <a class="header-anchor" href="#自定义字体" aria-label="Permalink to &quot;自定义字体&quot;">&ZeroWidthSpace;</a></h2>
+<p>这里其实<a href="https://vitepress.dev/zh/guide/extending-default-theme#using-different-fonts" target="_blank" rel="noreferrer">官方指南</a>也有较为详细的教程。</p>
+<blockquote>
+<p>为了避免在生成后的输出中包含 Inter 字体，我们从 <code>vitepress/theme-without-fonts</code> 中导入主题。</p>
+</blockquote>
+<p><code>theme/index.ts</code></p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> Theme </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'vitepress/theme-without-fonts'</span></span></code></pre>
+</div><p>然后，我们将自定义字体文件下载到<code>docs/assets/</code>目录下。</p>
+<p>注意：</p>
+<ol>
+<li>我们可以下载<code>VF</code>后缀的变体，而不是粗细下载不同的字体文件，那样就太大了；</li>
+<li>其次，我们可以下载<code>woff2</code>后缀的经过压缩的，且现代浏览器广泛支持的字体格式。</li>
+</ol>
+<p>之后，我们在样式文件通过<code>@font-face</code>引入，像这样：</p>
+<div class="language-css vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">css</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">@font-face</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">	font-family</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"SourceHanSerifCN"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">	src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">local</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"SourceHanSerifCN"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">), </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">url</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"/assets/fonts/SourceHanSerifCN-VF.woff2"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">);</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>现在，你就可以像平常一样愉快地使用改字体了...</p>
+<p>最后，我们为了提高用户体验，即加载速度，我们使用预加载字体文件的手段进行优化，这里使用<a href="https://vitepress.dev/zh/reference/site-config#transformhead" target="_blank" rel="noreferrer">transformHead</a> 构建钩子来添加对应的 head 信息：</p>
+<p>处理 head 的函数，使用正则匹配是因为 assets 目录下的文件名会有哈希后缀。</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> HeadConfig, </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> TransformContext } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> "vitepress"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> handleHeadMeta</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">context</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> TransformContext</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // 预加载字体</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> preloadHead</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> HeadConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[] </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> handleFontsPreload</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(context)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> [ </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">...</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">preloadHead ]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> handleFontsPreload</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({ </span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">assets</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> }</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> TransformContext</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> SourceHanSerifCN</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> assets.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">find</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">file</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =></span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> /</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF">SourceHanSerifCN-VF</span><span style="--shiki-light:#22863A;--shiki-light-font-weight:bold;--shiki-dark:#85E89D;--shiki-dark-font-weight:bold">\.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">\w</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">+</span><span style="--shiki-light:#22863A;--shiki-light-font-weight:bold;--shiki-dark:#85E89D;--shiki-dark-font-weight:bold">\.</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF">woff2</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  </span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  if</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> (SourceHanSerifCN) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      [</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">        'link'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          rel: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'preload'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          href: SourceHanSerifCN,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          as: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'font'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          type: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'font/woff2'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">          crossorigin: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">''</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      ]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ] </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">as</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> HeadConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">[]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> []</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+</div><p>在<a href="https://vitepress.dev/zh/reference/site-config#transformhead" target="_blank" rel="noreferrer">transformHead</a> 构建钩子执行这个函数：</p>
+<div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">async </span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">transformHead</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(context) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">	return</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> handleHeadMeta</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(context)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">},</span></span></code></pre>
+</div><h2 id="最后" tabindex="-1">最后 <a class="header-anchor" href="#最后" aria-label="Permalink to &quot;最后&quot;">&ZeroWidthSpace;</a></h2>
+<p>这次其实代码没写多少，大多数是从我以前的周刊网站、博客网站复制过来的，但博客内容的迁移及整理花费了不少的时间，比如，为每一篇文章生成摘要、标签等信息。</p>
+<p>以前总是想着博客网站可以将就一下，要以内容为主！但后面越看越不顺眼，内容就生产不出来了。就像房间需要打扫、桌面需要整理一下一样，心情都会不一样的。</p>
+]]></content:encoded>
+            <author>just@justin3go.com (Justin3go)</author>
+        </item>
+    </channel>
+</rss>
