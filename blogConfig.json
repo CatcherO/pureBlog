@@ -1,8 +1,174 @@
 {
-  "theme": "Justin3Go",
+  "theme": "default",
   "default": {
     "title": "My VitePress Blog",
-    "description": "A blog powered by VitePress with dynamic themes"
+    "description": "A blog powered by VitePress with dynamic themes",
+    "config": {
+      "cleanUrls": true,
+      "ignoreDeadLinks": true,
+      "sitemap": {
+        "hostname": "https://your-site.com"
+      },
+      "head": [
+        [
+          "link",
+          {
+            "rel": "icon",
+            "href": "/favicon.ico"
+          }
+        ]
+      ],
+      "markdown": {
+        "math": true
+      },
+      "locales": {
+        "root": {
+          "label": "简体中文",
+          "title": "我的博客",
+          "description": "一个由VitePress驱动的博客",
+          "lang": "zh-Hans",
+          "themeConfig": {
+            "nav": [
+              {
+                "text": "最近",
+                "link": "/"
+              },
+              {
+                "text": "全部",
+                "link": "/pages/archive",
+                "activeMatch": "/pages/archive"
+              },
+              {
+                "text": "关于",
+                "link": "/pages/about",
+                "activeMatch": "/pages/about"
+              },
+              {
+                "text": "标签",
+                "link": "pages/tags",
+                "activeMatch": "pages/tags"
+              }
+            ],
+            "footer": {
+              "message": "Copyright © 2024-present <a href=\"/about\">Your Name</a>"
+            },
+            "docFooter": {
+              "prev": "上一篇",
+              "next": "下一篇"
+            },
+            "outlineTitle": "当前页面",
+            "socialLinks": [
+              {
+                "icon": "github",
+                "link": "https://github.com/yourusername"
+              }
+            ],
+            "returnToTopLabel": "回到顶部",
+            "sidebarMenuLabel": "目录",
+            "darkModeSwitchLabel": "深色模式"
+          }
+        },
+        "en": {
+          "label": "English",
+          "title": "My Blog",
+          "description": "A blog powered by VitePress",
+          "lang": "en-US",
+          "themeConfig": {
+            "nav": [
+              {
+                "text": "Blog",
+                "link": "/en/"
+              },
+              {
+                "text": "Archive",
+                "link": "/en/pages/archive/",
+                "activeMatch": "/en/pages/archive/"
+              },
+              {
+                "text": "About",
+                "link": "/en/pages/about",
+                "activeMatch": "/en/pages/about"
+              },
+              {
+                "text": "Tags",
+                "link": "/en/pages/tags",
+                "activeMatch": "/en/pages/tags"
+              }
+            ],
+            "footer": {
+              "message": "Copyright © 2024-present <a href=\"/en/about\">Your Name</a>"
+            },
+            "socialLinks": [
+              {
+                "icon": "github",
+                "link": "https://github.com/yourusername"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "themeConfig": {
+      "outline": [2, 4],
+      "search": {
+        "provider": "local"
+      },
+      "externalLinkIcon": true
+    },
+    "site": {
+      "host": "https://your-site.com",
+      "defaultCover": "/bg.jpg"
+    },
+    "colors": {
+      "light": {
+        "brand": {
+          "1": "#2949a4",
+          "2": "#0749ff", 
+          "3": "#7494ec",
+          "soft": "rgba(110, 156, 190, 0.14)"
+        }
+      },
+      "dark": {
+        "brand": {
+          "1": "#aa9100",
+          "2": "#d5b811",
+          "3": "#ecce23",
+          "soft": "rgba(186, 186, 186, 0.14)"
+        }
+      }
+    },
+    "rss": {
+      "hostname": "https://your-site.com",
+      "title": "My Blog",
+      "description": "A blog powered by VitePress",
+      "id": "hostname",
+      "link": "hostname", 
+      "language": "zh-Hans",
+      "image": "/avatar.jpg",
+      "favicon": "/favicon.ico",
+      "copyright": "Copyright© 2024-present Your Name",
+      "author": {
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "link": "https://your-site.com"
+      }
+    },
+    "enRss": {
+      "hostname": "https://your-site.com",
+      "title": "My Blog",
+      "description": "A blog powered by VitePress",
+      "id": "hostname",
+      "link": "hostname", 
+      "language": "en-US",
+      "image": "/avatar.jpg",
+      "favicon": "/favicon.ico",
+      "copyright": "Copyright© 2024-present Your Name",
+      "author": {
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "link": "https://your-site.com"
+      }
+    }
   },
   "Justin3Go": {
     "config": {
@@ -10,7 +176,7 @@
       "cleanUrls": true,
       "ignoreDeadLinks": true,
       "sitemap": {
-        "hostname": "https://justin3go.com"
+        "hostname": "https://your-site.com"
       },
       "head": [
         [
@@ -143,10 +309,7 @@
                 },
                 "link": "/feed-en.xml"
               }
-            ],
-            "editLink": {
-              "pattern": "https://github.com/Justin3go/justin3go.com/edit/master/docs/:path"
-            }
+            ]
           }
         }
       }
@@ -203,7 +366,60 @@
       },
       "externalLinkIcon": true
     },
-    "rss": {},
+    "site": {
+      "host": "https://justin3go.com",
+      "defaultCover": "https://justin3go.com/bg.jpg"
+    },
+    "colors": {
+      "light": {
+        "brand": {
+          "1": "#2949a4",
+          "2": "#0749ff", 
+          "3": "#7494ec",
+          "soft": "rgba(110, 156, 190, 0.14)"
+        }
+      },
+      "dark": {
+        "brand": {
+          "1": "#aa9100",
+          "2": "#d5b811",
+          "3": "#ecce23",
+          "soft": "rgba(186, 186, 186, 0.14)"
+        }
+      }
+    },
+    "rss": {
+      "hostname":"https://justin3go.com",
+      "title": "Justin3go",
+      "description": "坚持深耕技术领域的 T 型前端程序员, 关注独立开发，喜欢 Vuejs、Nestjs, 还会点 Python、搜索引擎、NLP、Web3、后端",
+      "id": "hostname",
+      "link": "hostname", 
+      "language": "zh-Hans",
+      "image": "https://oss.justin3go.com/justin3goAvatar.jpg",
+      "favicon": "https://oss.justin3go.com/justin3goAvatar.ico",
+      "copyright": "Copyright© 2021-present Justin3go",
+      "author": {
+        "name": "Justin3go",
+        "email": "just@justin3go.com",
+        "link": "https://justin3go.com"
+      }
+    },
+    "enRss": {
+      "hostname":"https://justin3go.com",
+      "title": "Justin3go",
+      "description": "A T-shaped front-end developer who is committed to deepening expertise in the technical field, focuses on independent development and AI, enjoys working with Vue.js and Nest.js, and has some knowledge of Python, search engines, NLP, Web3, and back-end development.",
+      "id": "hostname",
+      "link": "hostname", 
+      "language": "en-US",
+      "image": "https://oss.justin3go.com/justin3goAvatar.jpg",
+      "favicon": "https://oss.justin3go.com/justin3goAvatar.ico",
+      "copyright": "Copyright© 2021-present Justin3go",
+      "author": {
+        "name": "Justin3go",
+        "email": "just@justin3go.com",
+        "link": "https://justin3go.com"
+      }
+    },
     "custom": {
       "config": {},
       "themeConfig": {},

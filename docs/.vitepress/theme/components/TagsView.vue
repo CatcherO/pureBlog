@@ -76,8 +76,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
-import { withBase, useRouter } from 'vitepress'
+import { computed, ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { withBase } from 'vitepress'
 import { initTags } from '../utils/initTags'
 import type { TagsData } from '../utils/initTags'
 import TagItem from './TagItem.vue'
@@ -102,23 +102,10 @@ const loading = ref<boolean>(true)
 const posts = ref<Post[]>([])
 const selectTag = ref<string>('')
 const isExpanded = ref<boolean>(false)
-const router = useRouter()
 
 // 处理数据
 const data = computed<TagsData>(() => {
-    const result = initTags(posts.value)
-    if (Object.keys(result).length > 0) {
-        console.log('标签数据已生成，共有标签:', Object.keys(result).length);
-        Object.keys(result).forEach(tag => {
-            console.log(`- ${tag}: ${result[tag].length}篇文章`);
-        });
-    }
-    return result
-})
-
-// 所有文章列表
-const allPosts = computed<Post[]>(() => {
-    return posts.value.sort((a: Post, b: Post) => b.date.time - a.date.time)
+    return initTags(posts.value)
 })
 
 // 切换标签展开/收起状态
@@ -128,19 +115,10 @@ function toggleExpand(): void {
 
 // 切换标签
 function toggleTag(tag: string): void {
-    console.log('切换标签:', tag, '当前选中:', selectTag.value);
-    
     if (selectTag.value === tag) {
         selectTag.value = '';
     } else {
         selectTag.value = tag;
-        
-        // 检查标签数据
-        if (data.value[tag]) {
-            console.log(`选中标签 ${tag} 下有 ${data.value[tag].length} 篇文章`);
-        } else {
-            console.warn(`标签 ${tag} 在数据中不存在!`);
-        }
     }
     
     // 更新URL参数，但不刷新页面
@@ -158,14 +136,12 @@ function toggleTag(tag: string): void {
 // 监听标签选择事件
 function handleTagSelected(event: CustomEvent): void {
     const tag = event.detail
-    console.log('TagsView收到标签选择事件:', tag);
     if (tag && typeof tag === 'string') {
         // 使用nextTick确保DOM已更新
         nextTick(() => {
             // 如果是当前已选中的标签，则取消选择
             if (selectTag.value === tag) {
                 selectTag.value = '';
-                console.log('取消选中标签:', tag);
                 
                 // 更新URL参数，但不刷新页面
                 if (typeof window !== 'undefined') {
@@ -175,13 +151,6 @@ function handleTagSelected(event: CustomEvent): void {
                 }
             } else {
                 selectTag.value = tag;
-                
-                // 检查标签数据
-                if (data.value[tag]) {
-                    console.log(`通过事件选中标签 ${tag} 下有 ${data.value[tag].length} 篇文章`);
-                } else {
-                    console.warn(`事件选中的标签 ${tag} 在数据中不存在!`);
-                }
                 
                 // 更新URL参数，但不刷新页面
                 if (typeof window !== 'undefined') {
@@ -197,8 +166,6 @@ function handleTagSelected(event: CustomEvent): void {
 // 客户端加载数据
 onMounted(async () => {
     try {
-        console.log('TagsView组件已挂载');
-        
         // 在挂载时添加自定义事件监听
         if (typeof window !== 'undefined') {
             window.addEventListener('tag-selected', handleTagSelected as EventListener)
@@ -206,31 +173,20 @@ onMounted(async () => {
         
         // 加载博客文章数据
         posts.value = blogPosts
-        console.log('加载的博客文章数量:', posts.value.length);
         
         // 从URL获取标签参数
         if (typeof window !== 'undefined') {
             const urlParams = new URLSearchParams(window.location.search)
             const tagParam = urlParams.get('tag')
-            console.log('URL中的标签参数:', tagParam);
             
             if (tagParam) {
                 // 延迟处理以确保数据已加载
                 setTimeout(() => {
                     selectTag.value = tagParam
-                    console.log('从URL设置选中标签:', selectTag.value);
-                    
-                    // 检查标签数据
-                    if (data.value[tagParam]) {
-                        console.log(`URL选中标签 ${tagParam} 下有 ${data.value[tagParam].length} 篇文章`);
-                    } else {
-                        console.warn(`URL选中的标签 ${tagParam} 在数据中不存在!`);
-                    }
                 }, 100);
             } else {
                 // 默认不选择任何标签，显示所有文章
                 selectTag.value = ''
-                console.log('默认不选择任何标签，显示所有文章');
             }
         }
     } catch (error) {
@@ -246,16 +202,6 @@ onBeforeUnmount(() => {
         window.removeEventListener('tag-selected', handleTagSelected as EventListener)
     }
 })
-
-// 监听selectTag变化，确保视图更新
-watch(selectTag, (newTag) => {
-    console.log('selectTag变化:', newTag);
-    
-    if (newTag && data.value[newTag]) {
-        const articleCount = data.value[newTag].length;
-        console.log(`当前选中标签 ${newTag} 下有 ${articleCount} 篇文章`);
-    }
-});
 </script>
 
 <style scoped>

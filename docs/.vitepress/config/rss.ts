@@ -2,19 +2,22 @@ import path from "node:path";
 import { writeFileSync } from "node:fs";
 import { Feed } from "feed";
 import { createContentLoader, type SiteConfig } from "vitepress";
+import blogConfig from '../../../blogConfig.json'
 
-const hostname = "https://justin3go.com";
+const themeName = blogConfig.theme || 'default'
+const themeConfig = (blogConfig as any)[themeName] || {}
+const rssConfig = themeConfig.rss || {}
 
 export async function createRssFileZH(config: SiteConfig) {
   const feed = new Feed({
-    title: 'Justin3go',
-    description: '坚持深耕技术领域的 T 型前端程序员, 关注独立开发，喜欢 Vuejs、Nestjs, 还会点 Python、搜索引擎、NLP、Web3、后端',
-    id: hostname,
-    link: hostname,
-    language: "zh-Hans",
-    image: "https://oss.justin3go.com/justin3goAvatar.jpg",
-    favicon: `https://oss.justin3go.com/justin3goAvatar.ico`,
-    copyright: "Copyright© 2021-present Justin3go",
+    title: rssConfig.title,
+    description: rssConfig.description,
+    id: rssConfig.id === 'hostname' ? rssConfig.hostname : rssConfig.id,
+    link: rssConfig.link === 'hostname' ? rssConfig.hostname : rssConfig.link,
+    language: rssConfig.language,
+    image: rssConfig.image,
+    favicon: rssConfig.favicon,
+    copyright: rssConfig.copyright,
   });
 
   const posts = await createContentLoader("posts/**/*.md", {
@@ -32,15 +35,15 @@ export async function createRssFileZH(config: SiteConfig) {
 
     feed.addItem({
       title: frontmatter.title,
-      id: `${hostname}${url}`,
-      link: `${hostname}${url}`,
+      id: `${rssConfig.hostname}${url}`,
+      link: `${rssConfig.hostname}${url}`,
       description: excerpt,
       content: html,
       author: [
         {
-          name: "Justin3go",
-          email: "just@justin3go.com",
-          link: "https://justin3go.com",
+          name: rssConfig.author?.name || "Justin3go",
+          email: rssConfig.author?.email || "just@justin3go.com",
+          link: rssConfig.author?.link || "https://justin3go.com",
         },
       ],
       date: frontmatter.date,
@@ -51,15 +54,18 @@ export async function createRssFileZH(config: SiteConfig) {
 }
 
 export async function createRssFileEN(config: SiteConfig) {
+  // 使用英文配置，如果没有则回退到中文配置
+  const enRssConfig = themeConfig.enRss || rssConfig;
+  
   const feed = new Feed({
-    title: "Justin3go",
-    description: "A T-shaped front-end developer who is committed to deepening expertise in the technical field, focuses on independent development, enjoys working with Vue.js and Nest.js, and has some knowledge of Python, search engines, NLP, Web3, and back-end development.",
-    id: hostname,
-    link: hostname,
-    language: "en-US",
-    image: "https://oss.justin3go.com/justin3goAvatar.jpg",
-    favicon: `https://oss.justin3go.com/justin3goAvatar.ico`,
-    copyright: "Copyright© 2021-present Justin3go",
+    title: enRssConfig.title,
+    description: enRssConfig.description,
+    id: enRssConfig.id === 'hostname' ? enRssConfig.hostname : enRssConfig.id,
+    link: enRssConfig.link === 'hostname' ? enRssConfig.hostname : enRssConfig.link,
+    language: enRssConfig.language || "en-US",
+    image: enRssConfig.image,
+    favicon: enRssConfig.favicon,
+    copyright: enRssConfig.copyright,
   });
 
   const posts = await createContentLoader("en/posts/**/*.md", {
@@ -77,15 +83,15 @@ export async function createRssFileEN(config: SiteConfig) {
 
     feed.addItem({
       title: frontmatter.title,
-      id: `${hostname}${url}`,
-      link: `${hostname}${url}`,
+      id: `${enRssConfig.hostname}${url}`,
+      link: `${enRssConfig.hostname}${url}`,
       description: excerpt,
       content: html,
       author: [
         {
-          name: "Justin3go",
-          email: "just@justin3go.com",
-          link: "https://justin3go.com",
+          name: enRssConfig.author?.name || "Justin3go",
+          email: enRssConfig.author?.email || "just@justin3go.com",
+          link: enRssConfig.author?.link || "https://justin3go.com",
         },
       ],
       date: frontmatter.date,

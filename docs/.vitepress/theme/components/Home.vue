@@ -33,7 +33,6 @@
 <script lang="ts" setup>
 import { ref, computed } from "vue";
 import { useRoute, useRouter } from "vitepress";
-import { MessagePlugin } from "tdesign-vue-next";
 import type { PaginationProps } from "tdesign-vue-next";
 
 import { data as posts } from "../posts.data.mjs";

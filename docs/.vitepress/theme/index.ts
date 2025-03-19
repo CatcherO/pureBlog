@@ -14,6 +14,8 @@ import Home from "./components/Home.vue";
 import HomeEn from "./components/HomeEn.vue";
 import Archive from "./components/Archive.vue";
 import ArchiveEn from "./components/ArchiveEn.vue";
+import ThemeColors from "./ThemeColors.vue";
+import TDesignDark from "./components/TDesignDark.vue";
 
 export default {
 	...Theme,
@@ -21,7 +23,7 @@ export default {
 		return h(Theme.Layout, null, {
 			// https://vitepress.dev/guide/extending-default-theme#layout-slots
 			"doc-after": () => h(Comment),
-			"doc-top": () => h(ImageViewer),
+			"doc-top": () => [h(ImageViewer), h(ThemeColors), h(TDesignDark)],
 			"aside-top": () => h(GoBack),
 		});
 	},

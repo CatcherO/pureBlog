@@ -21,18 +21,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
-import { MessagePlugin } from "tdesign-vue-next";
-import type { PaginationProps } from "tdesign-vue-next";
-import { TimeIcon } from "tdesign-icons-vue-next";
-
+import { computed } from "vue";
 import { data as posts } from "../posts.data.mjs";
-import { isMobile } from "../utils/mobile";
-
-// 处理数据
-const data = computed(() => {
-  return {};
-});
 
 const postGroups = computed(() => {
   const groups = new Map<string, typeof posts>();
