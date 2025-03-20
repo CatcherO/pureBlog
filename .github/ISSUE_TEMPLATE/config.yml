@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 功能请求或问题报告
+    url: https://github.com/yourusername/vitepress-blog-template/issues/new
+    about: 提交功能请求或问题报告
+  - name: 使用问题
+    url: https://github.com/yourusername/vitepress-blog-template/discussions
+    about: 请在讨论区提问使用相关的问题 

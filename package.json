@@ -1,21 +1,29 @@
 {
-  "name": "justin3go.com",
-  "version": "2.2.1",
-  "description": "坚持深耕技术领域的 T 型前端程序员, 关注独立开发与 AI，喜欢 Vuejs、Nestjs, 还会点 Python、搜索引擎、NLP、Web3、后端",
+  "name": "vitepress-blog-template",
+  "version": "1.0.0",
+  "description": "A VitePress blog template with multiple themes, multilingual support, and ready for GitHub Pages deployment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "vitepress",
+    "blog",
+    "template",
+    "github-pages",
+    "vue",
+    "markdown"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.12.12",
     "feed": "^4.2.2",
     "markdown-it-mathjax3": "^4.3.2",
+    "prettier": "^3.0.0",
     "sass": "^1.77.2",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.0",
@@ -26,5 +34,13 @@
     "tdesign-icons-vue-next": "^0.2.2",
     "tdesign-vue-next": "^1.11.1",
     "vue": "^3.5.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/vitepress-blog-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/vitepress-blog-template/issues"
+  },
+  "homepage": "https://github.com/yourusername/vitepress-blog-template#readme"
 }
