@@ -21,13 +21,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
-import { MessagePlugin } from "tdesign-vue-next";
-import type { PaginationProps } from "tdesign-vue-next";
-import { TimeIcon } from "tdesign-icons-vue-next";
+import { computed } from "vue";
 
 import { data as posts } from "../posts-en.data.mjs";
-import { isMobile } from "../utils/mobile";
 
 const postGroups = computed(() => {
   const groups = new Map<string, typeof posts>();
